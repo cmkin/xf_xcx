@@ -1,0 +1,23 @@
+<!--pages/index/company/company.wxml-->
+<view class="company">
+	<view class="search_w">
+		<view class="search">
+			<image src="/images/search.png"></image>
+			<input confirm-type="search" bindconfirm="listJsonChange" type="text" placeholder-style="color:#9D9CA2;font-size:28rpx;"
+			 placeholder="请搜索单位" />
+		</view>
+	</view>
+	
+	<view class="items">
+		<view class="item" data-item="{{item}}" bindtap="godetail" wx:for="{{lists}}">
+			<view class="t">{{item.departName}}</view>
+			<view class="addr">
+				<image src="/images/address.png"></image>
+				<text>{{item.address}}</text>
+			</view>
+			<image src="/images/jiantou.png"></image>
+		</view>
+	</view>
+
+
+</view>

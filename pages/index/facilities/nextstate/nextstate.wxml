@@ -1,0 +1,113 @@
+<!--pages/index/facilities/nextstate/nextstate.wxml-->
+<view class="nextstate">
+	<view class="tabs" data-typej="{{0}}">
+		<view class="item {{ item.id == active.tab ? 'active' : '' }}" data-id="{{item.id}}" wx:for="{{tabList}}">{{item.text}}</view>
+
+		<view class="t" bindtap="openMore">
+			<text>系统组件</text>
+			<image class="{{active.moreFlag?'open':''}}" src="/images/jiantou.png"></image>
+		</view>
+
+	</view>
+
+	<view class="more_w" bindtap="openMore" wx:if="{{active.moreFlag}}">
+		<view class="more" catchtap>
+			<view class="is clearfix">
+				<view class="{{ item.id == active.more ? 'active' : '' }}" wx:for="{{moreList}}">
+					<text>{{item.text}}</text>
+					<image src="/images/ok.png"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+
+
+	<view class="items">
+		<view class="item">
+			<view>
+				<text>公司全称:</text>
+				<text>武清居然之家</text>
+			</view>
+			<view>
+				<text>地址:</text>
+				<text>武清区前进道</text>
+			</view>
+			<view>
+				<text>防火等级:</text>
+				<text>中</text>
+			</view>
+			<view>
+				<text>安全负责人:</text>
+				<text>胡一天</text>
+			</view>
+			<view>
+				<text>联系电话:</text>
+				<text>12345678951</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="times">
+		<text>更新时间</text>
+		<text>2020.12.12 11:00:00</text>
+	</view>
+
+	<view class="sys_com">
+		<view class="title">
+			<text>系统组件</text>
+			<view class="r" bindtap="gohistory">
+				历史状态
+				<image src="/images/jiantou.png"></image>
+			</view>
+
+		</view>
+		<view class="ii">
+			<view class="t">消防水池</view>
+			<view class="addr">位置: <text>居然之家A座B1C区</text></view>
+			<view class="watter">
+				<text>水位</text>
+				<view class="pro">
+					<view class="l"><text></text></view>
+					<view class="r"><text>2/3</text>(米)</view>
+				</view>
+			</view>
+			<view class="dsw">
+				低水位报警
+				<text>是</text>
+			</view>
+		</view>
+	</view>
+	
+	
+	<view class="btn">
+		<text bindtap="alertM">状态核对</text>
+	</view>
+	
+	
+	<view class="alert" bindtap="alertM" wx:if="{{active.alert}}">
+		<view class="main" catchtap="noclose">
+			<view class="tt">选择处理方式 <image bindtap="alertM" src="/images/close.png"></image></view>
+			<view class="change">
+				<radio-group>
+					<label class="radio">
+						<radio value="r1" color="#3878FE" />符合
+					</label>
+					<label class="radio">
+						<radio value="r2" color="#3878FE" />不符合
+					</label>
+				</radio-group>
+			</view>
+			<view class="note">
+				<textarea placeholder-style="color:#9D9CA2" placeholder="请输入原因非必填" name="" id="" cols="30" rows="10"></textarea>
+			</view>
+			<view class="btn">
+				<text bindtap="alertrM">确定</text>
+			</view>
+		</view>
+		
+	</view>
+	
+	
+	
+	
+</view>

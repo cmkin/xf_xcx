@@ -1,0 +1,31 @@
+<!--pages/index/details/details.wxml-->
+<view class="new_details">
+	
+	
+	
+	 <view class="title">{{item.title}}</view>
+	<view class="time">
+		<text>{{item.source}}</text>{{item.articleTime}}
+	</view>
+	<!-- <view class="img">
+		<image src="/images/new.png"></image>
+	</view> -->
+	<view class="content">
+
+		<import src="/pages/wxParse/wxParse.wxml"/>
+		
+		<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+		
+
+
+	</view> 
+
+	<view class="icons">
+		<view class="i" bindtap="iconAction" data-type="{{item.type}}" wx:for="{{iconsLists}}">
+			<image src="{{item.icon}}"></image>
+			<text>{{item.text}}</text>
+			<button type="share" open-type="share" wx:if="{{index==2}}">分享</button>
+		</view>
+	</view>
+
+</view>

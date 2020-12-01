@@ -1,0 +1,55 @@
+/* pages/security/details/details.wxss */
+@import "/less/security/details/details.wxss";
+.alertr .main .tt{
+	color: #FF6565 !important;
+}  
+.alertr .main .cc text{
+	color: #FF6565;
+}
+.alertr .main .iis view{
+	font-size: 32rpx;
+	color: #5D5D60;
+	padding: 8rpx 30rpx;
+}
+.alertr .main .btn_i{
+	margin-top: 15rpx;
+	position: relative;
+	padding: 5px 30rpx !important;
+	margin-bottom: 0 !important;
+	background-color: #FF6565;
+	border-radius: 80rpx;
+	text-align: center;
+	margin: 30rpx;
+}
+.alertr .main .btn_i text{
+	display: inline-block;
+	color: #fff;
+	position: relative;
+	top: -4px;
+	margin-left: 3px;
+}
+.alertr .main .btn_i image{
+	width: 40rpx;
+	height: 40rpx;
+	display: inline-block;
+	margin-right: 3px;
+	
+}
+.alertr .main .obtns{
+	display: flex;
+	padding:30rpx;
+	padding-bottom: 60rpx;
+}
+.alertr .main .obtns text{
+	color: #FF6565;
+	border: 1px solid #FF6565;
+	opacity: 1;
+	text-align: center;
+	font-size: 32rpx;
+	border-radius: 40px;
+	flex: 1;
+	padding: 5px 0;
+}
+.alertr .main .obtns text:last-child{
+	margin-left: 20px;
+}

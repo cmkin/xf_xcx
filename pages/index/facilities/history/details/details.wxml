@@ -1,0 +1,67 @@
+<!--pages/index/facilities/history/details/details.wxml-->
+<view class="details">
+
+	<view class="items">
+		<!-- 不相符 -->
+		<view class="item">
+			<view>
+				<text>系统组件:</text>
+				<text>消防水池</text>
+			</view>
+			<view>
+				<text>核对时间:</text>
+				<text>2020-10-12  11:00:00</text>
+			</view>
+			<view>
+				<text>核对人:</text>
+				<text>张晓</text>
+			</view>
+			<view>
+				<text>职务:</text>
+				<text>中队长</text>
+			</view>
+			<view>
+				<text>单位:</text>
+				<text>河西消防支队</text>
+			</view>
+			<view>
+				<text>核对状态:</text>
+				<text>不符合</text>
+			</view>
+			<view>
+				<text>状态说明:</text>
+				<text>由于系统故障，没有数据，暂时无法准确判断由于系统故障，没有数据，暂时无法准确判断由于系统故障，没有数据，暂时无法准确判断由于系统故障，没有数据，暂时无法</text>
+			</view>
+		</view>
+		
+		<!-- 不相符 -->
+		<view class="item">
+			<view>
+				<text>系统组件:</text>
+				<text>消防水池</text>
+			</view>
+			<view>
+				<text>核对时间:</text>
+				<text>2020-10-12  11:00:00</text>
+			</view>
+			<view>
+				<text>核对人:</text>
+				<text>张晓</text>
+			</view>
+			<view>
+				<text>职务:</text>
+				<text>中队长</text>
+			</view>
+			<view>
+				<text>单位:</text>
+				<text>河西消防支队</text>
+			</view>
+			<view>
+				<text>核对状态:</text>
+				<text>相符</text>
+			</view>
+		</view>
+		
+	</view>
+
+</view>

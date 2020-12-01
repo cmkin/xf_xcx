@@ -1,0 +1,316 @@
+.g_alart {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.g_alart .main {
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  border-radius: 14px;
+}
+.g_alart .main .tt {
+  background: #E6E6E8;
+  padding: 8px;
+  color: #3A3A46;
+  border-radius: 14px 14px 0 0;
+  text-align: center;
+}
+.g_alart .main .tt image {
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+}
+.g_alart .main .change {
+  text-align: center;
+  padding: 50rpx;
+  font-weight: bold;
+}
+.g_alart .main .change label {
+  margin-right: 40rpx;
+}
+.g_alart .main .note {
+  padding: 0 40rpx;
+}
+.g_alart .main .note textarea {
+  border: 1px solid #9D9CA2;
+  padding: 30rpx;
+}
+.g_alart .main .btn {
+  text-align: center;
+  padding: 30rpx 0;
+  position: relative;
+}
+.g_alart .main .btn text {
+  display: inline-block;
+  width: 340rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  background: #3878FE;
+  opacity: 1;
+  border-radius: 40px;
+  color: #fff;
+}
+.g_alart .main .btn button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.security_details .items {
+  padding: 30rpx;
+}
+.security_details .items .item {
+  box-shadow: 0px 3px 6px #DBE2EA;
+  border-radius: 16px;
+  padding: 40rpx;
+  margin-bottom: 30rpx;
+  padding-top: 20rpx;
+  background: #fff;
+}
+.security_details .items .item .top {
+  position: relative;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #E6E6E8;
+}
+.security_details .items .item .top text {
+  font-weight: 500;
+  font-size: 34rpx;
+}
+.security_details .items .item .top .r {
+  position: absolute;
+  right: 0;
+  top: -20rpx;
+  padding: 5px 8px;
+  width: 40rpx;
+  background: #FF606B;
+  color: #fff;
+  text-align: center;
+  border-radius: 0px 0px 33px 33px;
+  font-size: 24rpx;
+}
+.security_details .items .item .top .org {
+  background: #FFBD62;
+}
+.security_details .items .item .top .blue {
+  background: #4B9EFF;
+}
+.security_details .items .item .top .orgs {
+  background: #FF6724;
+  padding: 0;
+  width: 60rpx;
+  padding: 3px;
+  font-size: 26rpx;
+}
+.security_details .items .item .top .yc {
+  background: #A18BEB;
+}
+.security_details .items .item .top .gz {
+  background: #9D9CA2;
+}
+.security_details .items .item .li {
+  margin-top: 20rpx;
+  color: #5D5D60;
+}
+.security_details .items .item .li text:last-child {
+  float: right;
+  color: #3A3A46;
+}
+.security_details .items .item .li .org {
+  color: #FF5334 !important;
+}
+.security_details .items .item .li .green {
+  color: #00BF67 !important;
+}
+.security_details .items .item .btn {
+  text-align: center;
+  padding: 30rpx 0;
+  position: relative;
+  margin-top: 20rpx;
+}
+.security_details .items .item .btn text {
+  display: inline-block;
+  width: 340rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  background: #3878FE;
+  opacity: 1;
+  border-radius: 40px;
+  color: #fff;
+}
+.security_details .items .item .btn button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.security_details .alert {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.security_details .alert .main {
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  border-radius: 14px;
+}
+.security_details .alert .main .tt {
+  background: #E6E6E8;
+  padding: 8px;
+  color: #3A3A46;
+  border-radius: 14px 14px 0 0;
+  text-align: center;
+}
+.security_details .alert .main .tt image {
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+}
+.security_details .alert .main .change {
+  text-align: center;
+  padding: 50rpx;
+  font-weight: bold;
+}
+.security_details .alert .main .change label {
+  margin-right: 40rpx;
+}
+.security_details .alert .main .note {
+  padding: 0 40rpx;
+}
+.security_details .alert .main .note textarea {
+  border: 1px solid #9D9CA2;
+  padding: 30rpx;
+}
+.security_details .alert .main .btn {
+  text-align: center;
+  padding: 30rpx 0;
+  position: relative;
+}
+.security_details .alert .main .btn text {
+  display: inline-block;
+  width: 340rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  background: #3878FE;
+  opacity: 1;
+  border-radius: 40px;
+  color: #fff;
+}
+.security_details .alert .main .btn button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.security_details .alertr {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.security_details .alertr .main {
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  border-radius: 14px;
+}
+.security_details .alertr .main .tt {
+  background: #E6E6E8;
+  padding: 8px;
+  color: #3A3A46;
+  border-radius: 14px 14px 0 0;
+  text-align: center;
+}
+.security_details .alertr .main .tt image {
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+}
+.security_details .alertr .main .change {
+  text-align: center;
+  padding: 50rpx;
+  font-weight: bold;
+}
+.security_details .alertr .main .change label {
+  margin-right: 40rpx;
+}
+.security_details .alertr .main .note {
+  padding: 0 40rpx;
+}
+.security_details .alertr .main .note textarea {
+  border: 1px solid #9D9CA2;
+  padding: 30rpx;
+}
+.security_details .alertr .main .btn {
+  text-align: center;
+  padding: 30rpx 0;
+  position: relative;
+}
+.security_details .alertr .main .btn text {
+  display: inline-block;
+  width: 340rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  background: #3878FE;
+  opacity: 1;
+  border-radius: 40px;
+  color: #fff;
+}
+.security_details .alertr .main .btn button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.security_details .alertr .main .cc {
+  padding: 50rpx 0;
+  text-align: center;
+  color: #FF6565;
+}
+.security_details .alertr .main .cc image {
+  display: block;
+  width: 100rpx;
+  margin: auto;
+  height: 100rpx;
+}
+.security_details .alertr .main .cc text {
+  display: block;
+  margin-top: 30rpx;
+  font-weight: bold;
+}
+.security_details .alertr .main .btn {
+  margin-bottom: 30rpx;
+}
+.security_details .alertr .main .btn text {
+  background: #FF6565;
+}

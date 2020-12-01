@@ -1,0 +1,45 @@
+<!--pages/mine/info/info.wxml-->
+<view class="info">
+	<form catchsubmit="formSubmit" catchreset="formReset">
+		<view class="items">
+			<view class="item clearfix">
+				<text>头像</text>
+				<view class="r" bindtap="changeImg">
+					<image></image>
+				</view>
+			</view>
+			<view class="item clearfix">
+				<text>姓名</text>
+				<view class="r">
+					<input type="text" name="name" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请输入姓名" />
+				</view>
+			</view>
+			<view class="item clearfix">
+				<text>电话</text>
+				<view class="r">
+					<input type="number" name="phone" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请输入电话" />
+				</view>
+			</view>
+			<view class="item clearfix">
+				<text>单位</text>
+				<view class="r">
+					<input type="text" name="dw" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请输入单位" />
+				</view>
+			</view>
+			<view class="item clearfix">
+				<text>职务</text>
+				<view class="r">
+					<input type="number" name="zw" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请输入职务" />
+				</view>
+			</view>
+			<view class="item clearfix">
+				<text>所属区域</text>
+				<view class="r">
+					<input type="text" name="qy" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请输入所属区域" />
+				</view>
+			</view>
+		</view>
+		
+		 <button class="btn" type="primary" formType="submit">确定</button>
+	</form>
+</view>

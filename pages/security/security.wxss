@@ -1,0 +1,2 @@
+/* pages/security/security.wxss */
+@import "/less/security/security.wxss";

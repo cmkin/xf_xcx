@@ -1,0 +1,128 @@
+@import '../common.less';
+
+.security{
+	padding: 30rpx;
+	.tops{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		width: 100%;
+		height: 80rpx;
+		line-height: 80rpx;
+		background: #fff;
+		display: flex;
+		text{
+			flex: 1;
+			text-align: center;
+			color: #1B1B1D;
+			transition: all 0.5s;
+			font-size: 32rpx;
+		}
+		.active{
+			color: @ls;
+		}
+	}
+	.fix{
+		position: fixed;
+		top: 80rpx;
+		left: 0;
+		z-index: 100;
+		background: #fff;
+		width: 100%;
+		padding: 30rpx;
+		padding-bottom: 3px;
+		padding-top: 0;
+		box-sizing: border-box;
+	}
+	.search{
+		padding: 5px;
+		background: #F7F8FA;
+		border-radius: 30px;
+		position: relative;
+		padding-left: 90rpx;
+		box-sizing: border-box;
+		width: 100%;
+		image{
+			width: 50rpx;
+			height: 50rpx;
+			position: absolute;
+			left: 10px;
+			top: 2px;
+		}
+		input{
+			display: block;
+			width: 100%;
+		}
+	}
+	.tabs{
+		.g_tabs; 
+		color: @hs-s; 
+	}
+	.items{
+		padding-top: 240rpx;
+		.item{
+			box-shadow: 0px 3px 6px #DBE2EA;
+			border-radius: 16px;
+			padding: 40rpx;
+			padding-top: 20rpx;
+			margin-bottom: 30rpx;
+			background: #fff;
+			.top{
+				position: relative;
+				padding: 30rpx 0;
+				border-bottom: 1px solid #E6E6E8;
+				text{
+					font-weight: 500;
+					font-size: 34rpx;
+				}
+				.r{
+					position: absolute;
+					right: 0;
+					top: -20rpx;
+					padding: 5px 8px;
+					width: 40rpx;
+					background: #FF606B;
+					color: #fff;
+					text-align: center;
+					border-radius:  0px 0px 33px 33px;
+					font-size: 24rpx;
+				}
+				.org{
+					background: #FFBD62;
+				}
+				.blue{
+					background: #4B9EFF;
+				}
+				.orgs{
+					background: #FF6724;
+					padding: 0;
+					width: 60rpx;
+					padding: 3px;
+					font-size: 26rpx;
+				}
+				.yc{
+					background: #A18BEB;
+				}
+				.gz{
+					background: #9D9CA2;
+				}
+			}
+			.li{
+				margin-top: 20rpx;
+				color:@hs-s;
+				text:last-child{
+					float: right;
+					color: #3A3A46;
+				}
+				.org{
+					color: #FF5334 !important;
+				}
+				.green{
+					color: #00BF67 !important;
+				}
+			}
+			
+		}
+	}
+}

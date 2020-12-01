@@ -1,0 +1,52 @@
+@import '../../common.less';
+.account{
+	padding: 30rpx;
+	.title{
+		text-align: center;
+		font-size: 34rpx;
+		color: #3A3A46;
+		margin-bottom: 40rpx;
+	}
+	.items{
+		.item{
+			height: 230rpx;
+			float: left;
+			width: 50%;
+			text-align: center;
+			image{
+				width: 120rpx;
+				height: 120rpx;
+				border-radius: 4px;
+				background: #9DC5FF;
+				display: block;
+				margin: auto;
+			}
+			&>text{
+				display: block;
+				font-size: 32rpx;
+				color: #3A3A46;
+				padding-top: 4rpx;
+			}
+			.now{
+				font-size: 28rpx;
+				color: @hs;
+				text{
+					display: inline-block;
+					position: relative;
+					&::after{
+						content: '';
+						position: absolute;
+						left: 0;
+						top: 60%;
+						width: 16rpx;
+						height: 16rpx;
+						background: #3F8CFF;
+						border-radius: 50%;
+						transform: translate(-150%,-50%);
+					}
+				}
+				
+			}
+		}
+	}
+}

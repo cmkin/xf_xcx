@@ -1,0 +1,80 @@
+<!--pages/security/details/details.wxml-->
+<view class="security_details">
+	<view class="items">
+		<view class="item">
+			<view class="top">
+				<text>食为天餐饮有限公司</text>
+				<view class="r gz">故障</view>
+
+			</view>
+			<view class="li">
+				<text>地址:</text>
+				<text>新城市中心C座</text>
+			</view>
+			<view class="li">
+				<text>报警时间:</text>
+				<text>2020-02-02 11:11:11</text>
+			</view>
+			<view class="li">
+				<text>报警信息种类:</text>
+				<text>手报</text>
+			</view>
+			<view class="li">
+				<text>处理状态:</text>
+				<text class="org">待处理</text>
+			</view>
+			<view class="li">
+				<text>安全负责人:</text>
+				<text>张军</text>
+			</view>
+			<view class="li">
+				<text>负责人电话:</text>
+				<text>13234560987</text>
+			</view>
+			<!-- <view class="btn" bindtap="alertM">
+				<text>立即处理</text>
+			</view> -->
+		</view>
+	</view>
+
+
+	<view class="alert" bindtap="alertM" wx:if="{{alert}}">
+		<view class="main" catchtap="noclose">
+			<view class="tt">选择处理方式 <image bindtap="alertM" src="/images/close.png"></image></view>
+			<view class="change">
+				<radio-group>
+					<label class="radio">
+						<radio value="r1" color="#3878FE" checked="true" />真实火警
+					</label>
+					<label class="radio">
+						<radio value="r2" color="#3878FE" />误报
+					</label>
+					<label class="radio">
+						<radio value="r3" color="#3878FE" />测试
+					</label>
+				</radio-group>
+			</view>
+			<view class="note">
+				<textarea placeholder-style="color:#9D9CA2" placeholder="请输入原因非必填" name="" id="" cols="30" rows="10"></textarea>
+			</view>
+			<view class="btn">
+				<text bindtap="alertrM">立即处理</text>
+			</view>
+		</view>
+		
+	</view>
+	
+	<view class="alertr" bindtap="alertrM" wx:if="{{alertr}}">
+		<div class="main" catchtap="noclose">
+			<view class="tt">真实火警 <image bindtap="alertrM" src="/images/close.png"></image></view>
+			<view class="cc">
+				<image src="/images/hj.png"></image>
+				<text>真实火警</text>
+			</view>
+			<view class="btn">
+				<text>立即拨打119</text>
+			</view>
+		</div>
+	</view>
+
+</view>

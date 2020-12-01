@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+	  "alarms":"/pages/security/alarms/alarms"
+  },
+  "navigationBarTitleText":"火灾报警",
+  "enablePullDownRefresh":true
+}

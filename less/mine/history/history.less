@@ -1,0 +1,83 @@
+@import '../../common.less';
+.history{
+	.tabs_wrap{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 10;
+		background-color: #fff;
+	}
+	.tabs{
+		.g_tabs;
+		width: 70%;
+		margin: auto;
+		.item{
+			text-align: center;
+			&::after{
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+	
+	.news_list{
+		margin-top: 110rpx;
+		padding: 30rpx;
+		background: #fff;
+		.tt{
+			font-size: 32rpx;
+			font-weight: 600;
+			color: #3A3A46;
+			position: relative;
+			margin-bottom: 10px;
+			padding-left: 14rpx;
+			&::after{
+				content: '';
+				width: 4rpx;
+				height: 34rpx;
+				background: #3878FE;
+				opacity: 1;
+				position: absolute;
+				left: 0;
+				top: 2px;
+			}
+		}
+		
+		.i{
+			border-bottom: 1px solid #E6E6E8;
+			position: relative;
+			padding: 20rpx 0;
+			padding-right: 120rpx;
+			
+			&>image{
+				position: absolute;
+				right: 0;
+				top: 20rpx;
+				width: 100px;
+				height: 78px;
+				background: #4D5DFD;
+				opacity: 1;
+				border-radius: 8px;
+			}
+			.left{
+				padding-right: 120rpx;
+				&>text{
+					display: block;
+					font-size: 32rpx;
+					color: @hs-s;
+					margin-bottom: 20rpx;
+				}
+				.info{
+					color: @hs;
+					font-size: 28rpx;
+					text:last-child{
+						float: right;
+					}
+				}
+			}
+		}
+	}
+	
+	
+}

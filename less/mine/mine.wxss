@@ -1,0 +1,51 @@
+.mine .tx {
+  background-color: #3F8CFF;
+  color: #fff;
+  overflow: hidden;
+}
+.mine .tx > image {
+  width: 120rpx;
+  height: 120rpx;
+  display: block;
+  background: #fff;
+  margin: 30rpx auto;
+  border-radius: 50%;
+}
+.mine .tx > text {
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+}
+.mine .tx .edit {
+  margin-top: 8rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+.mine .tx .edit > image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+}
+.mine .tx .edit > text {
+  color: #fff;
+  font-size: 28rpx;
+}
+.mine .items .item {
+  background-color: #fff;
+  padding: 30rpx;
+  border-bottom: 1px solid #E6E6E8;
+}
+.mine .items .item image {
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+}
+.mine .items .item text {
+  color: #3A3A46;
+  font-size: 32rpx;
+}
+.mine .items .top {
+  margin-top: 30rpx;
+  border-top: 1px solid #E6E6E8;
+}

@@ -1,0 +1,51 @@
+@import '../../common.less';
+.info{
+	form{
+		display: block;
+	}
+	.items{
+		.item{
+			background-color: #fff;
+			padding: 30rpx;
+			position: relative;
+			border-bottom: 1px solid #E6E6E8;
+			&>text{
+				color: #3A3A46;
+				font-size: 32rpx;
+			}
+			.r{
+				float: right;
+				image{
+					width: 60px;
+					height: 60px;
+					background: #9FC5FF;
+					opacity: 1;
+					border-radius: 4px;
+				}
+				input{
+					text-align: right;
+					color: @hs-s;
+				}
+			}
+		}
+		.item:first-child{
+			&>text{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 30rpx;
+			}
+		}
+	}
+	
+	.btn{
+		.g_btn;
+		width: 686rpx;
+		height: 78rpx;
+		line-height: 22rpx;
+		background-color: #3878FE !important;
+		opacity: 1;
+		border-radius: 40px;
+		margin-top: 80rpx;
+	}
+}

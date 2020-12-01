@@ -1,0 +1,73 @@
+<!--pages/index/company/details/details.wxml-->
+<view class="c_details">
+	<map 
+	id="map" 
+	latitude="{{latitude}}" 
+	longitude="{{longitude}}" 
+	bindmarkertap="markertap" 
+	bindcallouttap="callouttap"
+	bindlabeltap="labeltap" 
+	markers="{{markers}}"
+	 show-compass="{{false}}"
+	scale="16">
+	
+	
+	</map>
+	
+	
+	<view class="jl">
+		当前位置距离您{{juli}}KM
+	</view>
+	
+	<view class="details" wx:if="{{detailsFlag}}">
+		
+		<view class="flag" bindtap="openM" wx:if="{{openFlag}}">
+			<text>收起</text>
+			<image style="transform: rotate(-90deg);" src="/images/jiantou.png"></image>
+		</view>
+		
+		<view class="t">{{item.name}}</view>
+		<view class="addr">
+			<image src="/images/address.png"></image>
+			<text>{{item.address}}</text>
+		</view>
+		<view class="i">
+			<text>负责人:</text>
+			<text>{{item.aqzrr}}</text>
+		</view>
+		<view class="i">
+			<text>电话:</text>
+			<text>{{item.tel}}</text>
+			<image src="/images/phone.png" bindtap="phoneCall"></image>
+		</view>
+		<view class="i"  wx:if="{{openFlag}}">
+			<text>单位类别:</text>
+			<text>{{item.typename}}</text>
+		</view>
+		<view class="i"  wx:if="{{openFlag}}">
+			<text>占地面积:</text>
+			<text>{{item.dwzdmj}}</text>
+		</view>
+		<view class="i"  wx:if="{{openFlag}}">
+			<text>建筑面积:</text>
+			<text>{{item.zjzmj}}</text>
+		</view>
+		<view class="i"  wx:if="{{openFlag}}">
+			<text>防火等级:</text>
+			<text>{{item.jgdj}}</text>
+		</view>
+		<view class="i"  wx:if="{{openFlag}}">
+			<text>法人代表:</text>
+			<text>{{item.legalperson}}</text>
+		</view>
+		
+		
+		
+		<view class="flag" bindtap="openM"  wx:if="{{!openFlag}}">
+			<text>展开</text>
+			<image src="/images/jiantou.png"></image>
+		</view>
+		
+	</view>
+	
+</view>

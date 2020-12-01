@@ -1,0 +1,42 @@
+<!--pages/index/facilities/state/state.wxml-->
+<view class="state">
+	<view class="tabs" bindtap="changeTab">
+		<view class="item {{ active.tab==1?'active':'' }}" data-type="{{1}}">消防系统</view>
+		<view class="item {{ active.tab==2?'active':'' }} " data-type="{{2}}">关键设备</view>
+		<view class="item {{ active.tab==3?'active':'' }} " data-type="{{3}}">参数类型</view>
+	</view>
+	<view class="dselects" bindtap="closeDs" wx:if="{{active.tab}}">
+		<view class="mm" catchtap>
+			<view class="left">
+				<view bindtap="changeLeft" data-id="{{item.id}}" class="{{item.id==active.tableft?'active':''}}" wx:for="{{tabList}}">{{item.text}}</view>
+			</view>
+			<view class="right" >
+				<view bindtap="changeRight" wx:for="{{tabRight}}" data-id="{{item.id}}" class="{{item.id==active.tabright?'active':''}}">{{item.text}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="items">
+		<view class="item">
+			<view>
+				<text>公司全称:</text>
+				<text>武清居然之家</text>
+			</view>
+			<view>
+				<text>地址:</text>
+				<text>武清区前进道</text>
+			</view>
+			<view>
+				<text>防火等级:</text>
+				<text>中</text>
+			</view>
+			<view>
+				<text>安全负责人:</text>
+				<text>胡一天</text>
+			</view>
+			<view>
+				<text>联系电话:</text>
+				<text>12345678951</text>
+			</view>
+		</view>
+	</view>
+</view>

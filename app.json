@@ -1,0 +1,73 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/index/company/company",
+		
+		"pages/index/company/details/details",
+
+
+		"pages/index/facilities/history/details/details",
+		"pages/index/facilities/history/history",
+		"pages/index/facilities/nextstate/nextstate",
+		"pages/index/facilities/state/state",
+		"pages/index/facilities/facilities",
+		"pages/security/security",
+		"pages/login/login",
+		"pages/login/phoneLogin/phoneLogin",
+		"pages/login/phoneBind/phoneBind",
+		"pages/index/details/details",
+		"pages/index/otherInfo/details/details",
+		"pages/index/otherInfo/otherInfo",
+		"pages/mine/handle/handle",
+		"pages/mine/handle/details/details",
+		"pages/mine/mine",
+		"pages/mine/about/about",
+		"pages/mine/account/account",
+		"pages/mine/editPassword/editPassword",
+		"pages/mine/history/history",
+		"pages/mine/info/info",
+		"pages/security/alarms/details/details",
+		"pages/security/details/details"
+
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "Weixin",
+		"navigationBarTextStyle": "black"
+	},
+	"permission": {
+
+		"scope.userLocation": {
+
+			"desc": "你的位置信息将用于小程序位置接口的效果展示"
+
+		}
+	},
+	"tabBar": {
+		"color": "#9D9CA2",
+		"selectedColor": "#3878FE",
+		"borderStyle": "white",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "/images/index.png",
+				"selectedIconPath": "/images/index_s.png"
+			},
+			{
+				"pagePath": "pages/security/security",
+				"text": "火灾报警",
+				"iconPath": "/images/anquan.png",
+				"selectedIconPath": "/images/anquan_s.png"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"text": "我的",
+				"iconPath": "/images/mine.png",
+				"selectedIconPath": "/images/mine_s.png"
+			}
+		]
+	},
+	"style": "v2",
+	"sitemapLocation": "sitemap.json"
+}

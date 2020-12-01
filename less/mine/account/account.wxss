@@ -1,0 +1,107 @@
+.g_alart {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.g_alart .main {
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  border-radius: 14px;
+}
+.g_alart .main .tt {
+  background: #E6E6E8;
+  padding: 8px;
+  color: #3A3A46;
+  border-radius: 14px 14px 0 0;
+  text-align: center;
+}
+.g_alart .main .tt image {
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+}
+.g_alart .main .change {
+  text-align: center;
+  padding: 50rpx;
+  font-weight: bold;
+}
+.g_alart .main .change label {
+  margin-right: 40rpx;
+}
+.g_alart .main .note {
+  padding: 0 40rpx;
+}
+.g_alart .main .note textarea {
+  border: 1px solid #9D9CA2;
+  padding: 30rpx;
+}
+.g_alart .main .btn {
+  text-align: center;
+  padding: 30rpx 0;
+}
+.g_alart .main .btn text {
+  display: inline-block;
+  width: 340rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  background: #3878FE;
+  opacity: 1;
+  border-radius: 40px;
+  color: #fff;
+}
+.account {
+  padding: 30rpx;
+}
+.account .title {
+  text-align: center;
+  font-size: 34rpx;
+  color: #3A3A46;
+  margin-bottom: 40rpx;
+}
+.account .items .item {
+  height: 230rpx;
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+.account .items .item image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 4px;
+  background: #9DC5FF;
+  display: block;
+  margin: auto;
+}
+.account .items .item > text {
+  display: block;
+  font-size: 32rpx;
+  color: #3A3A46;
+  padding-top: 4rpx;
+}
+.account .items .item .now {
+  font-size: 28rpx;
+  color: #9D9CA2;
+}
+.account .items .item .now text {
+  display: inline-block;
+  position: relative;
+}
+.account .items .item .now text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 60%;
+  width: 16rpx;
+  height: 16rpx;
+  background: #3F8CFF;
+  border-radius: 50%;
+  transform: translate(-150%, -50%);
+}

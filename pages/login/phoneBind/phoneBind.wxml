@@ -1,0 +1,22 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+	<view class="tt">手机号绑定</view>
+	<form catchsubmit="formSubmit" catchreset="formReset">
+		<view class="items">
+			<view class="item phone">
+				<text>+86</text>
+				<input placeholder="请输入手机号" placeholder-style="color:#9D9CA2;font-size:28rpx;" type="number" />
+				<text>发送验证码</text>
+			</view>
+			<view class="item">
+				<input placeholder="请输入验证码" placeholder-style="color:#9D9CA2;font-size:28rpx;" type="number" />
+			</view>
+		</view>
+	
+	
+		<button class="btn" type="primary" formType="submit">绑定</button>
+	</form>
+	
+	
+	
+</view>

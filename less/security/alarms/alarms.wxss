@@ -1,0 +1,189 @@
+.g_alart {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.g_alart .main {
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  border-radius: 14px;
+}
+.g_alart .main .tt {
+  background: #E6E6E8;
+  padding: 8px;
+  color: #3A3A46;
+  border-radius: 14px 14px 0 0;
+  text-align: center;
+}
+.g_alart .main .tt image {
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+}
+.g_alart .main .change {
+  text-align: center;
+  padding: 50rpx;
+  font-weight: bold;
+}
+.g_alart .main .change label {
+  margin-right: 40rpx;
+}
+.g_alart .main .note {
+  padding: 0 40rpx;
+}
+.g_alart .main .note textarea {
+  border: 1px solid #9D9CA2;
+  padding: 30rpx;
+}
+.g_alart .main .btn {
+  text-align: center;
+  padding: 30rpx 0;
+  position: relative;
+}
+.g_alart .main .btn text {
+  display: inline-block;
+  width: 340rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  background: #3878FE;
+  opacity: 1;
+  border-radius: 40px;
+  color: #fff;
+}
+.g_alart .main .btn button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.alarms {
+  padding-top: 60rpx;
+}
+.alarms .tabs {
+  margin: 30rpx;
+  background: #fff;
+  box-shadow: 0px 3px 6px #F2F4F7;
+  opacity: 1;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+.alarms .tabs .tt {
+  background: #E7EBF0;
+  display: flex;
+}
+.alarms .tabs .tt text {
+  flex: 1;
+  text-align: center;
+  font-size: 32rpx;
+  color: #9D9CA2;
+  padding: 8px 0;
+}
+.alarms .tabs .tt .active {
+  color: #5D5D60;
+  background: #FFFFFF;
+  opacity: 1;
+  border-radius: 16rpx 16rpx 0px 0px;
+}
+.alarms .tabs .item {
+  display: none;
+}
+.alarms .tabs .item .cc {
+  padding: 20rpx 0;
+  margin: 0 20rpx;
+  border-bottom: 1px solid #E6E6E8;
+}
+.alarms .tabs .item .cc input {
+  display: inline-block;
+  width: 70%;
+  position: relative;
+  left: 10px;
+}
+.alarms .tabs .item .cc image {
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  margin-top: 5px;
+  transform: rotate(90deg);
+}
+.alarms .tabs .item .cc picker {
+  display: inline-block;
+  width: 85%;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.alarms .tabs .item .cc .picker {
+  display: inline-block;
+}
+.alarms .tabs .item .cc .p {
+  font-size: 28rpx;
+  color: #9D9CA2;
+}
+.alarms .tabs .item .btn {
+  padding-bottom: 20rpx;
+  text-align: center;
+  padding: 30rpx 0;
+  position: relative;
+}
+.alarms .tabs .item .btn text {
+  display: inline-block;
+  width: 340rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  background: #3878FE;
+  opacity: 1;
+  border-radius: 40px;
+  color: #fff;
+}
+.alarms .tabs .item .btn button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.alarms .tabs .item .btn text {
+  width: 80%;
+}
+.alarms .tabs > .active {
+  display: block;
+}
+.alarms .tables {
+  padding-bottom: 40rpx;
+}
+.alarms .tables .item {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #5D5D60;
+  padding: 10px 5px;
+}
+.alarms .tables .item text {
+  flex: 1;
+  font-size: 28rpx;
+}
+.alarms .tables .item text:first-child {
+  flex: 0.8;
+}
+.alarms .tables .item text:nth-child(2) {
+  flex: 1.5;
+}
+.alarms .tables .tt {
+  color: #3A3A46;
+}
+.alarms .tables .item:nth-child(odd) {
+  background-color: #E7EBF0;
+}

@@ -1,0 +1,55 @@
+<!--pages/index/index.wxml-->
+<view class="index">
+	<view class="banner">
+		<swiper indicator-dots="{{false}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}">
+			
+			<swiper-item wx:key="{{index}}" wx:for="{{banner}}">
+				<view class="item">
+					<image mode="aspectFill" src="{{item.url}}"></image>
+				</view>
+			</swiper-item>
+		</swiper>
+	</view>
+	<view class="cd_list clearfix">
+		<view class="item" bindtap="goLink" data-item="{{item}}" wx:for="{{cdList}}">
+			<image src="{{item.icon}}"></image>
+			<text>{{item.text}}</text>
+		</view>
+	</view>
+	
+	<view class="hzbj">
+		<view class="t">
+			<text>火灾警报</text>
+			<view class="r" bindtap="goAll">
+				全部警报
+				<image src="/images/jiantou.png"></image>
+			</view>
+		</view>
+		<view class="is">
+			<view class="i">
+				<text>{{policeCount.notHandleCount}}</text>
+					待处理
+			</view>
+			<view class="i">
+				<text>{{policeCount.handleCount}}</text>
+					已处理
+			</view>
+		</view>
+	</view>
+	
+	
+	<view class="news_list">
+		<view class="tt">新闻中心</view>
+		<view class="i" bindtap="godetail" data-id="{{item.id}}" wx:for="{{newlists}}">
+			<view class="left">
+				<text>{{item.title}}</text>
+				<view class="info">
+					<text>{{item.source}}</text>
+					<text>{{item.articleTime}}</text>
+				</view>
+			</view>
+			<image src="{{item.coverUrl}}" mode="aspectFill"></image>
+		</view>
+	</view>
+	
+</view>

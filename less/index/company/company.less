@@ -1,0 +1,75 @@
+@import '../../common.less';
+
+.company{
+	.search_w{
+		background-color: #fff; 
+		padding: 15rpx 30rpx;
+		border-top: 1px solid #E7EBF0;
+		border-bottom: 1px solid #E7EBF0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+		box-sizing: border-box;
+	}
+	.search{
+		padding: 5px;
+		background: #F7F8FA;
+		border-radius: 30px;
+		position: relative;
+		padding-left: 90rpx;
+		box-sizing: border-box;
+		width: 100%;
+		image{
+			width: 50rpx;
+			height: 50rpx;
+			position: absolute;
+			left: 10px;
+			top: 2px;
+		}
+		input{
+			display: block;
+			width: 100%;
+		}
+	}
+	
+	
+	.items{
+		padding: 30rpx;
+		padding-top: 120rpx;
+		.item{
+			margin-bottom: 30rpx;
+			background-color: #FFFFFF;
+			padding:20rpx 30rpx;
+			position: relative;
+			box-shadow: 0px 3px 6px rgba(152, 160, 165, 0.16);
+			opacity: 1;
+			border-radius: 12px;
+			.t{
+				color: #707070;
+				font-size: 32rpx;
+				margin-bottom: 10rpx;
+			}
+			.addr{
+				image{
+					width: 20rpx;
+					height: 20rpx;
+					margin-right: 10rpx;
+				}
+				text{
+					color: #B6BCC4;
+					font-size: 28rpx;
+				}
+			}
+			&>image{
+				position: absolute;
+				right: 30rpx;
+				top: 35rpx;
+				width: 40rpx;
+				height: 50rpx;
+			}
+		}
+	}
+	
+}

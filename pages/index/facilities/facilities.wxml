@@ -1,0 +1,16 @@
+<!--pages/index/facilities/facilities.wxml-->
+<view class="facilities">
+	<view class="s_W">
+		<view class="search">
+			<image src="/images/search.png"></image>
+			<input data-typej="{{2}}" confirm-type="search" bindconfirm="listJsonChange" type="text" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请搜索单位" />
+		</view>
+	</view>
+	<view class="items">
+		<view class="item" bindtap="goDetail" wx:for="{{15}}">
+			<text>武清居然之家</text>
+			<image src="/images/jiantou.png"></image>
+		</view>
+	</view>
+	
+</view>

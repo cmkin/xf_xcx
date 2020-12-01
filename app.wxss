@@ -1,0 +1,27 @@
+/**app.wxss**/
+
+page{
+	background: #F9FAFC;
+	font-size: 32rpx;
+	color: #5D5D60;
+}
+text,view{
+	font-size: 32rpx;
+	color: #5D5D60;
+}
+
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+@import "/pages/wxParse/wxParse.wxss";

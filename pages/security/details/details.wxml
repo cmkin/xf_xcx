@@ -1,0 +1,95 @@
+<!--pages/security/details/details.wxml-->
+<view class="security_details">
+	<view class="items">
+		<view class="item">
+			<view class="top">
+				<text>{{item.companyName}}</text>
+				<!-- <view class="r">异常</view> -->
+				
+				<view class="r" wx:if="{{item.policeResultType==null}}">报警</view>
+				<view class="r org" wx:if="{{item.policeResultType==30}}">误报</view>
+				<view class="r blue" wx:if="{{item.policeResultType==20}}">测试</view>
+				<view class="r orgs" wx:if="{{item.policeResultType==10}}">真实火警</view>
+				<view class="r gz" wx:if="{{item.policeResultType==40}}">故障</view>
+
+			</view>
+			<view class="li">
+				<text>地址:</text>
+				<text>{{item.address}}</text>
+			</view>
+			<view class="li">
+				<text wx:if="{{item.handleStatus==0}}">报警时间:</text>
+				<text wx:else>处理时间:</text>
+				<text>{{item.handleStatus==0 ? item.equipmentSysTime : item.handleTime}}</text>
+			</view>
+			<view class="li">
+				<text>报警信息种类:</text>
+				<text>{{item.equipmentInfo}}</text>
+			</view>
+			<view class="li">
+				<text>处理状态:</text>
+				<text class="org" wx:if="{{item.handleStatus==0}}">待处理</text>
+				<text class="green" wx:if="{{item.handleStatus==1}}">已处理</text>
+			</view>
+			<view class="li">
+				<text>安全负责人:</text>
+				<text>{{item.aqzrr}}</text>
+			</view>
+			<view class="li">
+				<text>负责人电话:</text>
+				<text>{{item.tel}}</text>
+			</view>
+			<view class="li" wx:if="{{item.handleStatus==1}}">
+				<text>处理人:</text>
+				<text>{{item.handleUserCode}}</text>
+			</view>
+			<view class="btn" bindtap="alertM" wx:if="{{item.handleStatus==0}}">
+				<text>立即处理</text>
+			</view>
+		</view>
+	</view>
+
+
+	<view class="alert" bindtap="alertM" wx:if="{{alert}}">
+		<view class="main" catchtap="noclose">
+			<view class="tt">选择处理方式 <image bindtap="alertM" src="/images/close.png"></image></view>
+			<form bindsubmit="formSubmitType" >
+				<view class="change">
+					<radio-group name="type">
+						<label class="radio">
+							<radio value="10" color="#3878FE" checked="true" />真实火警
+						</label>
+						<label class="radio">
+							<radio value="30" color="#3878FE" />误报
+						</label>
+						<label class="radio">
+							<radio value="20" color="#3878FE" />测试
+						</label>
+					</radio-group>
+				</view>
+				<view class="note">
+					<textarea name="note" value="" placeholder-style="color:#9D9CA2" placeholder="请输入原因非必填"  id="" cols="30" rows="10"></textarea>
+				</view>
+				<view class="btn">
+					<text>立即处理</text>
+					<button type="primary" form-type="submit"></button>
+				</view>
+			</form>
+		</view>
+		
+	</view>
+	
+	<view class="alertr" bindtap="alertrM" wx:if="{{alertr}}">
+		<div class="main" catchtap="noclose">
+			<view class="tt">真实火警 <image bindtap="alertrM" src="/images/close.png"></image></view>
+			<view class="cc">
+				<image src="/images/hj.png"></image>
+				<text>真实火警</text>
+			</view>
+			<view class="btn">
+				<text bindtap="phoneCall">立即拨打119</text>
+			</view>
+		</div>
+	</view>
+
+</view>

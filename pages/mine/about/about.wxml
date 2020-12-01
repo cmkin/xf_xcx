@@ -1,0 +1,13 @@
+<!--pages/mine/about/about.wxml-->
+<view class="about">
+	<view class="code">
+		<image bindtap="showbig"></image>
+	</view>
+	<view class="li">国昂卓泰智慧消防</view>
+	<view class="li">地址：天津市武清环渤海</view>
+	<view class="li">电话：022-23345566</view>
+	
+	<view bindtap="showbig"  class="code_big" wx:if="{{codefalg}}">
+		<image></image>
+	</view>
+</view>

@@ -1,0 +1,66 @@
+<!--pages/index/alarms/alarms.wxml-->
+<view class="alarms">
+	<view class="tabs">
+		<view class="tt" bindtap="changeTab">
+			<text class="{{ tabActive ==1 ?'active':'' }}" data-type="{{1}}">单位</text>
+			<text class="{{ tabActive ==2 ?'active':'' }}" data-type="{{2}}">时间</text>
+			<text class="{{ tabActive ==3 ?'active':'' }}" data-type="{{3}}">设备</text>
+		</view>
+		<view class="item {{ tabActive ==1 ?'active':'' }}">
+			<view class="cc">
+				<text>单位</text>
+				<input placeholder="请搜索单位" bindinput="inputChange" placeholder-style="color:#9D9CA2;font-size:28rpx;" type="text" />
+			</view>
+			<view class="btn">
+				<text bindtap="search">单位搜索</text>
+			</view>
+		</view>
+		<view class="item {{ tabActive ==2 ?'active':'' }}">
+			<view class="cc">
+				<text>时间</text>
+				<picker mode="date" value="{{time}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+				    <view class="picker">
+				      <text class="t" wx:if="{{time}}">{{time}}</text>
+					  <text class="p" wx:if="{{!time}}">请选择时间</text>
+				    </view>
+					<image src="/images/jiantou.png"></image>
+				</picker>
+				
+			</view>
+			<view class="btn">
+				<text bindtap="search">时间搜索</text>
+			</view>
+		</view>
+		<view class="item {{ tabActive ==3 ?'active':'' }}">
+			<view class="cc">
+				<text>设备</text>
+				<picker value="{{sbindex}}" bindchange = "bindSbChange" range="{{sblist}}">
+					 <view class="picker">
+						  <text class="t" wx:if="{{sbindex}}">{{sblist[sbindex]}}</text>
+						  <text class="p" wx:if="{{!sbindex}}">请选择设备</text>
+					  </view>	
+					  <image src="/images/jiantou.png"></image>
+				</picker>
+				
+				
+			</view>
+			<view class="btn">
+				<text bindtap="search">设备搜索</text>
+			</view>
+		</view>
+	</view>
+	
+	<view class="tables">
+		<view class="item">
+			<text>单位</text>
+			<text>时间</text>
+			<text>设备</text>
+		</view>
+		<view class="item" bindtap="godetails" data-item="{{item}}" wx:for="{{otherlists}}">
+			<text>{{item.companyName}}</text>
+			<text>{{item.equipmentSysTime}}</text>
+			<text>{{item.deviceName}}</text>
+		</view>
+	</view>
+	
+</view>

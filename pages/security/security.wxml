@@ -1,0 +1,61 @@
+<!--pages/security/security.wxml-->
+<view class="security">
+	
+	<view class="tops" bindtap="changePage">
+		<text data-type="{{0}}" class="{{ pageType==0?'active':'' }}">火灾警报</text>
+		<text data-type="{{1}}" class="{{ pageType==1?'active':'' }}">其他报警</text>
+	</view>
+	
+	
+	 <alarms wx:if="{{pageType==1}}" otherlists="{{otherLists}}" bind:formOther = "formOther"></alarms>
+	<view class="fix"  wx:if="{{pageType==0}}">
+		<view class="search">
+			<image src="/images/search.png"></image>
+			<input data-typej="{{2}}" confirm-type="search" bindconfirm="listJsonChange" type="text" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请搜索报警信息种类、报警性质" />
+		</view>
+		<view class="tabs" data-typej ="{{0}}" bindtap="listJsonChange">
+			<view class="item {{ listJson.handleStatus == 100 ? 'active' : '' }}" data-type="{{100}}">全部</view>
+			<view class="item {{ listJson.handleStatus == 0 ? 'active' : '' }} " data-type="{{0}}">待处理</view>
+			<view class="item  {{ listJson.handleStatus == 1 ? 'active' : '' }} " data-type="{{1}}">已处理</view>
+			<view class="item jt" catchtap data-type="{{200}}">
+				  <picker mode="date" data-typej ="{{1}}" value="{{listJson.equipmentSysTime}}" start="1998-01-01" bindcancel="listJsonChange"  bindchange="listJsonChange">
+				    <view class="picker">
+				      {{ listJson.equipmentSysTime ? listJson.equipmentSysTime : '按时间筛选' }}
+				    </view>
+				  </picker>
+				
+				
+				<image src="/images/jiantou.png" ></image>
+			</view>
+		</view>
+	</view>
+	
+
+	<view class="items"  wx:if="{{pageType==0}}">
+		<view class="item" bindtap="goDetails" data-item="{{item}}" wx:for="{{hotLists}}">
+			<view class="top">
+				<text>{{item.companyName}}</text>
+				<view class="r" wx:if="{{item.policeResultType==null}}">报警</view>
+				<view class="r org" wx:if="{{item.policeResultType==30}}">误报</view>
+				<view class="r blue" wx:if="{{item.policeResultType==20}}">测试</view>
+				<view class="r orgs" wx:if="{{item.policeResultType==10}}">真实火警</view>
+				<view class="r gz" wx:if="{{item.policeResultType==40}}">故障</view>
+			</view>
+			<view class="li">
+				<text wx:if="{{item.handleStatus==0}}">报警时间:</text>
+				<text wx:else>处理时间:</text>
+				<text>{{item.handleStatus==0 ? item.equipmentSysTime : item.handleTime}}</text>
+			</view>
+			<view class="li">
+				<text>报警信息种类:</text>
+				<text>{{item.equipmentInfo}}</text>
+			</view>
+			<view class="li">
+				<text>处理状态:</text>
+				<text class="org" wx:if="{{item.handleStatus==0}}">待处理</text>
+				<text class="green" wx:if="{{item.handleStatus==1}}">已处理</text>
+			</view>
+		</view>
+	</view>
+	
+</view>

@@ -1,0 +1,2 @@
+/* pages/index/alarms/alarms.wxss */
+@import "/less/security/alarms/alarms.wxss";

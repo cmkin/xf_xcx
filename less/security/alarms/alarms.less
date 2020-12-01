@@ -1,0 +1,105 @@
+@import '../../common.less';
+.alarms{
+	padding-top: 60rpx;
+	.tabs{
+		margin: 30rpx;
+		background: #fff;
+		box-shadow: 0px 3px 6px #F2F4F7;
+		opacity: 1;
+		border-radius: 16rpx;
+		overflow: hidden;
+		.tt{
+			background: #E7EBF0;
+			display: flex;
+			text{
+				flex: 1;
+				text-align: center;
+				font-size: 32rpx;
+				color: @hs;
+				padding: 8px 0;
+			}
+			.active{
+				color: @hs-s;
+				background: #FFFFFF;
+				opacity: 1;
+				border-radius: 16rpx 16rpx 0px 0px;
+			}
+		}
+		.item{
+			display: none;
+			.cc{
+				padding: 20rpx 0;
+				margin: 0 20rpx;
+				border-bottom: 1px solid #E6E6E8;
+				input{
+					display: inline-block;
+					width: 70%;
+					position: relative;
+					
+					left: 10px;
+				}
+				image{
+					width: 40rpx;
+					height: 40rpx;
+					float: right;
+					margin-top: 5px;
+					transform: rotate(90deg);
+				}
+				picker{
+					display: inline-block;
+					width: 85%;
+					margin-left: 10px;
+					margin-top: 0px;
+				}
+				.picker{
+					display: inline-block;
+				}
+				.p{
+					font-size: 28rpx;
+					color: @hs;
+				}
+			}
+			.btn{
+				padding-bottom: 20rpx;
+				.g_btn;
+				text{
+					width: 80%;
+				}
+			}
+		}
+		&>.active{
+			display: block;
+		}
+	}
+
+	.tables{
+		padding-bottom: 40rpx;
+		.item{
+			display: flex;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			font-size: 28rpx;
+			color: @hs-s;
+			padding: 10px 5px;
+			text{
+				flex: 1;
+				font-size: 28rpx;
+			}
+			text:first-child{
+				flex: 0.8;
+			}
+			text:nth-child(2){
+				flex: 1.5;
+			}
+			
+		}
+		.tt{
+			color: #3A3A46;
+		}
+		.item:nth-child(odd){
+			background-color: #E7EBF0;
+		}
+	}
+
+}

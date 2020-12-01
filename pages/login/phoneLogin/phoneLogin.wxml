@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+	<view class="tt">手机号登录</view>
+	<form catchsubmit="formSubmit" catchreset="formReset">
+		<view class="items">
+			<view class="item phone">
+				<text>+86</text>
+				<input bindinput="getPhone" name="phone" placeholder="请输入手机号" placeholder-style="color:#9D9CA2;font-size:28rpx;" type="number" />
+				<text bindtap="getCode">{{numText}}</text>
+			</view>
+			<view class="item">
+				<input placeholder="请输入验证码" name="code" placeholder-style="color:#9D9CA2;font-size:28rpx;" type="number" />
+			</view>
+		</view>
+		<view class="ol" bindtap="back">密码登录</view>
+	
+		<button class="btn" type="primary" formType="submit">确定</button>
+	</form>
+	
+	<view class="wx" bindtap="wxLogin">
+		<image src="/images/icon-wechat.png"></image>
+		<text>微信直接登录</text>
+	</view>
+	
+</view>

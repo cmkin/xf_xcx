@@ -1,0 +1,26 @@
+/* pages/login/login.wxss */
+@import "/less/login/login.wxss";
+
+.login .items .item.phone{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+
+}
+.login .items .item.phone text{
+	color: #000;
+	padding-left: 10rpx;
+}
+.login .items .item.phone text:last-child{
+	width:100px;
+	color: #3F8CFF;
+	padding-right: 10rpx;
+	margin-right: 10rpx;
+	padding-left: 0;
+}
+
+.login .items .item.phone text:first-child{
+	width:80px;
+	padding-left: 0;
+	text-align: center;
+}

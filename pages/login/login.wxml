@@ -1,0 +1,23 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+	<view class="tt">密码登录</view>
+	<form catchsubmit="formSubmit" catchreset="formReset">
+		<view class="items">
+			<view class="item">
+				<input name="username" value="test" placeholder="请输入帐号" placeholder-style="color:#9D9CA2;font-size:28rpx;" type="text" />
+			</view>
+			<view class="item">
+				<input name="password" value="123456" placeholder="请输入密码" placeholder-style="color:#9D9CA2;font-size:28rpx;" type="password" />
+			</view>
+		</view>
+		<view class="ol" bindtap="goOther">直接登录</view>
+	
+		<button class="btn" type="primary" formType="submit">确定</button>
+	</form>
+	
+	<view class="wx" bindtap="wxLogin">
+		<image src="/images/icon-wechat.png"></image>
+		<text>微信直接登录</text>
+	</view>
+	
+</view>
