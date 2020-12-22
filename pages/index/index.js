@@ -19,7 +19,7 @@ Page({
 		},
 		{
 			icon:'/images/icon-3.png',
-			text:"消防单位",
+			text:"联网单位",
 			link:'./company/company'
 		},
 		{
@@ -94,6 +94,13 @@ Page({
   },
   goLink(e){
 	  let item = e.currentTarget.dataset.item
+	  if(item.link==''){
+		  wx.showToast({
+			  title:"建设中，敬请期待！",
+			  icon:"none"
+		  })
+		  return
+	  }
 		wx.navigateTo({
 			url:item.link
 		})

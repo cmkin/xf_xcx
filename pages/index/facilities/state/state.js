@@ -1,68 +1,34 @@
 // pages/index/facilities/state/state.js
+const App = getApp()
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		tabList: [{
-				id: 0,
-				text: '消防系统'
-			},
-			{
-				id: 1,
-				text: '消火栓'
-			},
-			{
-				id: 2,
-				text: '自喷系统',
-				child: [{
-					id: 0,
-					text: '湿式自喷'
-				}]
-			},
-			{
-				id: 3,
-				text: '防排烟系统'
-			},
-			{
-				id: 4,
-				text: '气体灭火系统'
-			},
-			{
-				id: 5,
-				text: '消防供水'
-			},
-			{
-				id: 9,
-				text: '消火栓'
-			},
-			{
-				id: 6,
-				text: '自喷系统'
-			},
-			{
-				id: 7,
-				text: '防排烟系统'
-			},
-			{
-				id: 8,
-				text: '气体灭火系统'
-			},
-		],
+		tabList: [],
 		active: {
 			tab: false,
 			tableft: null,
 			tabright: null
 		},
-		tabRight: []
+		tabRight: [],
+		item:{}
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
-
+		let item = JSON.parse(decodeURIComponent(options.item))
+			for(let i in item){
+				if(!item[i]){
+					item[i] = '暂无'
+				}
+			}
+		this.setData({
+			item: item
+		})
 	},
 	changeLeft(e) {
 		let id = e.currentTarget.dataset.id
@@ -82,7 +48,8 @@ Page({
 			let itemt = {
 				title: item.text,
 				id: id,
-				type: 1
+				type: 1,
+				item:this.data.item
 			}
 			wx.navigateTo({
 				url: '../nextstate/nextstate?item=' + JSON.stringify(itemt) 
@@ -101,8 +68,9 @@ Page({
 			title: itemP.text,
 			id: itemP.id,
 			title2:itemP.child.filter(item=>item.id ==id)[0].text,
-			id:id,
-			type: 2
+			id2:id,
+			type: 2,
+			item:this.data.item
 		}
 		wx.navigateTo({
 			url: '../nextstate/nextstate?item=' + JSON.stringify(itemt)
@@ -110,9 +78,41 @@ Page({
 	},
 	changeTab(e) {
 		let type = e.target.dataset.type
-		this.setData({
-			'active.tab': type
+			if(!type){
+				return
+			}
+		App.post({
+			url:"category/getCategory",
+			data:{
+				type:type
+			},
+			method:"GET",
+			success:(res)=>{
+				
+				this.setData({
+					'active.tab': type,
+					tabRight: [],
+					'tabList':res.map(item=>{
+						let obj = {
+							id:item.id,
+							text:item.name,
+							item:item,
+						}
+						if(item.sysCategoryVoList.length){
+							obj.child = item.sysCategoryVoList.map(tt=>{
+								return {
+									text:tt.name,
+									id:tt.id,
+									item:tt
+								}
+							})
+						}
+						return obj
+					})
+				})
+			}
 		})
+		
 	},
 	closeDs() {
 		this.setData({

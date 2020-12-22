@@ -1,23 +1,77 @@
 // pages/mine/info/history/history.js
+const App = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+	listJson:{
+		pageNo:0,
+		type:0
+	},
+	lists:[],
+	oallnums:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	this.init({})
   },
-  godetail(){
+  godetail(e){
+	  let id = e.currentTarget.dataset.id
   	  wx.navigateTo({
-  		  url:"/pages/index/details/details"
+  		  url:"/pages/index/details/details?id="+id
   	  })
+  },
+  
+  changeTab(e){
+  	  console.log(e)
+  	  this.setData({
+  		  listJson:{
+  		  	pageNo:0,
+  		  	type:e.currentTarget.dataset.type
+  		  },
+  	  })
+  	  this.init({})
+  },
+  init(ops){
+  	  
+  	  let json = { ...this.data.listJson
+  	  }
+		json.type = json.type+1
+  	  App.post({
+  	  	url: 'articleUser/list',
+  	  	method: "GET",
+  	  	data: {
+  	  		...json
+  	  	},
+  	  	success: (res) => {
+  	  		if (ops.add) {
+  	  			this.setData({
+  	  				lists: this.data.lists.concat(res),
+  	  				oallnums: Math.ceil(res.total / res.size)
+  	  			})
+  	  		} else {
+  	  			this.setData({
+  	  				lists: res,
+  	  				oallnums: Math.ceil(res.total / res.size)
+  	  			})
+  	  			wx.pageScrollTo({
+  	  				scrollTop: 0
+  	  			})
+  	  		}
+  	  
+  	  
+  	  		//隐藏导航条加载动画
+  	  		wx.hideNavigationBarLoading();
+  	  		//停止下拉刷新
+  	  		wx.stopPullDownRefresh();
+  	  	}
+  	  })
+  	  
   },
 
   /**
@@ -51,16 +105,43 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
+  onPullDownRefresh: function() {
+  
+  		wx.showNavigationBarLoading();
+  		this.setData({
+  			'listJson': {
+  				...this.data.listJson,
+  				pageNo: 0
+  			}
+  		})
+  		this.init({})
+  	
+  
   },
-
+  
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  onReachBottom: function() {
+  
+  
+  		if (this.data.listJson.pageNo == this.data.allnums) {
+  			return
+  		}
+  		wx.showNavigationBarLoading();
+  		this.setData({
+  			'listJson': {
+  				...this.data.listJson,
+  				pageNo: this.data.listJson.pageNo + 1
+  			}
+  		})
+  		this.init({
+  			add: true
+  		})
+  	
+  
   },
+  
 
   /**
    * 用户点击右上角分享

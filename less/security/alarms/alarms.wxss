@@ -185,5 +185,8 @@
   color: #3A3A46;
 }
 .alarms .tables .item:nth-child(odd) {
-  background-color: #E7EBF0;
+  background-color: #E6EEFF;
+}
+.alarms .tables .item:nth-child(even) {
+  background-color: #fff;
 }

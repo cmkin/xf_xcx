@@ -2,35 +2,76 @@
 <view class="security">
 	
 	<view class="tops" bindtap="changePage">
-		<text data-type="{{0}}" class="{{ pageType==0?'active':'' }}">火灾警报</text>
+		<text data-type="{{0}}" class="{{ pageType==0?'active':'' }}">火灾报警</text>
 		<text data-type="{{1}}" class="{{ pageType==1?'active':'' }}">其他报警</text>
 	</view>
 	
 	
 	 <alarms wx:if="{{pageType==1}}" otherlists="{{otherLists}}" bind:formOther = "formOther"></alarms>
 	<view class="fix"  wx:if="{{pageType==0}}">
-		<view class="search">
-			<image src="/images/search.png"></image>
-			<input data-typej="{{2}}" confirm-type="search" bindconfirm="listJsonChange" type="text" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请搜索报警信息种类、报警性质" />
-		</view>
-		<view class="tabs" data-typej ="{{0}}" bindtap="listJsonChange">
-			<view class="item {{ listJson.handleStatus == 100 ? 'active' : '' }}" data-type="{{100}}">全部</view>
-			<view class="item {{ listJson.handleStatus == 0 ? 'active' : '' }} " data-type="{{0}}">待处理</view>
-			<view class="item  {{ listJson.handleStatus == 1 ? 'active' : '' }} " data-type="{{1}}">已处理</view>
-			<view class="item jt" catchtap data-type="{{200}}">
-				  <picker mode="date" data-typej ="{{1}}" value="{{listJson.equipmentSysTime}}" start="1998-01-01" bindcancel="listJsonChange"  bindchange="listJsonChange">
-				    <view class="picker">
-				      {{ listJson.equipmentSysTime ? listJson.equipmentSysTime : '按时间筛选' }}
-				    </view>
-				  </picker>
-				
-				
-				<image src="/images/jiantou.png" ></image>
+		<view class="search_wrap">
+			<view class="search">
+				<image src="/images/search.png"></image>
+				<input data-typej="{{2}}" confirm-type="search" bindconfirm="listJsonChange" type="text" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请搜索联网单位名称" />
 			</view>
 		</view>
+		
+		<view class="tiaojian">
+			<view class="titles">
+				<view class="i" bindtap="flagZl">
+					<text>{{listJson.equipmentType}}</text>
+					<image src="../../images/jiantouxiangxia.png"></image>
+				</view>
+				<view class="i" bindtap="flagXz">
+					<text>{{xztext}}</text>
+					<image src="../../images/jiantouxiangxia.png"></image>
+				</view>
+				<view class="i" catchtap data-type="{{200}}">
+					
+					<picker mode="date" data-typej ="{{1}}" value="{{listJson.equipmentSysTime}}" start="1998-01-01" bindcancel="listJsonChange"  bindchange="listJsonChange">
+					  <view class="picker">
+						  <text> {{ listJson.equipmentSysTime ? listJson.equipmentSysTime : '时间' }}</text>
+						  <image src="../../images/jiantouxiangxia.png"></image>		   
+					  </view>
+					</picker>
+					
+					
+				</view>
+			</view>
+			
+			<view class="list_wrap" wx:if="{{flag.zl}}">
+				<text wx:for="{{zllist}}" bindtap="changeZl" data-item="{{item}}" class="{{item==listJson.equipmentType?'active':''}}">{{item}}</text>
+				<view class="bg" bindtap="flagZl"></view>
+			</view>
+			
+			<view class="list_wrap" wx:if="{{flag.xz}}">
+				<text wx:for="{{xzlist}}" bindtap="changeXz" data-id="{{item.id}}" class="{{item.id==listJson.policeResultType?'active':''}}">{{item.text}}</text>
+				<view class="bg" bindtap="flagXz"></view>
+			</view>
+			
+			
+		</view>
+		
+		
 	</view>
 	
-
+	
+	<view class="tabs" data-typej ="{{0}}" bindtap="listJsonChange">
+		<view class="item {{ listJson.handleStatus == 100 ? 'active' : '' }}" data-type="{{100}}">全部</view>
+		<view class="item {{ listJson.handleStatus == 0 ? 'active' : '' }} " data-type="{{0}}">待处理</view>
+		<view class="item  {{ listJson.handleStatus == 1 ? 'active' : '' }} " data-type="{{1}}">已处理</view>
+		<!-- <view class="item jt" catchtap data-type="{{200}}">
+			  <picker mode="date" data-typej ="{{1}}" value="{{listJson.equipmentSysTime}}" start="1998-01-01" bindcancel="listJsonChange"  bindchange="listJsonChange">
+			    <view class="picker">
+			      {{ listJson.equipmentSysTime ? listJson.equipmentSysTime : '按时间筛选' }}
+			    </view>
+			  </picker>
+			
+			
+			<image src="/images/jiantou.png" ></image>
+		</view> -->
+	</view>
+	
 	<view class="items"  wx:if="{{pageType==0}}">
 		<view class="item" bindtap="goDetails" data-item="{{item}}" wx:for="{{hotLists}}">
 			<view class="top">
@@ -48,7 +89,7 @@
 			</view>
 			<view class="li">
 				<text>报警信息种类:</text>
-				<text>{{item.equipmentInfo}}</text>
+				<text>{{item.typeInfo}}</text>
 			</view>
 			<view class="li">
 				<text>处理状态:</text>

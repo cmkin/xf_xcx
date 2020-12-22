@@ -15,6 +15,8 @@ App({
 				}
 			}
 		})
+		
+		
 
 		wx.getStorage({
 			key: "token",
@@ -22,7 +24,48 @@ App({
 				this.globalData.token = res.data
 			}
 		})
+		wx.getStorage({
+			key: "userList",
+			success: (res) => {
+				this.globalData.userList = res.data
+			}
+		})
 
+	},
+	saveUser(res){
+		this.globalData.token = res.token
+		this.globalData.userInfo = res.sysUser
+		wx.setStorage({
+		  key:"token",
+		  data:res.token
+		})
+		
+		let has = -1
+		
+		
+		
+		if(res.sysUser==null){
+			return
+		}else{
+			has =  this.globalData.userList.findIndex(item=>{
+				return item.sysUser.id == res.sysUser.id	
+			})
+		}
+		
+		
+		
+		
+		 console.log(this.globalData.userList)
+	
+			if(has>=0){
+				this.globalData.userList[has] = res
+			}else{
+				this.globalData.userList.push(res)
+			}
+		wx.setStorage({
+		  key:"userList",
+		  data:this.globalData.userList
+		})
 	},
 	cheakLogin: function(cancel) {
 		if (this.globalData.token == null) {
@@ -50,7 +93,7 @@ App({
 	post: function(optings) {
 
 		let ops = {
-			urls: 'http://console.tjlinux.cn:9088/jeecg-boot/app/' + optings.url,
+			urls: optings.url.indexOf("http")>=0 ? optings.url : 'http://console.tjlinux.cn:9088/jeecg-boot/app/' + optings.url,
 			data: {},
 			token: true,
 			loginTs: true,
@@ -146,7 +189,8 @@ App({
 	},
 	globalData: {
 		userInfo: null,
-		token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDY4Mjc1NzIsInVzZXJuYW1lIjoidGVzdCJ9.eFxfZHOadM2c1gcCUhH-CSTsKSlhklhygI71CdSXGho',
-		code: null
+		token: null,
+		code: null,
+		userList:[]
 	}
 })

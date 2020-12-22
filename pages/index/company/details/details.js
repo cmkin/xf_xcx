@@ -35,6 +35,11 @@ Page({
 	 */
 	onLoad: function(options) {
 		let item = JSON.parse(decodeURIComponent(options.item))
+			for(let i in item){
+				if(!item[i]){
+					item[i] = '暂无'
+				}
+			}
 		this.setData({
 			item: item,
 			latitude: item.lat,
@@ -68,7 +73,18 @@ Page({
 			    Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)));
 			    s = s *6378.137 ;// EARTH_RADIUS;
 			    s = Math.round(s * 10000) / 10000; //输出为公里
-			    //s=s.toFixed(2);
+			    
+				if(s<1){
+					s={
+						n:s*1000,
+						ism:true
+					}
+				}else{
+					s={
+						n:s.toFixed(1),
+						ism:false
+					}
+				}
 			    return s;
 			
 			 }

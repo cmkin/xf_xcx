@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText":"消防设施状态"
+  "navigationBarTitleText":"消防设施状态",
+  "enablePullDownRefresh":true
 }

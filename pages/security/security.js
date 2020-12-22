@@ -12,11 +12,37 @@ Page({
 		otherLists: [],
 		allnums: 0,
 		oallnums: 0,
+		zllist:['报警信息种类','探测器','手报','传输装置'],
+		xzlist:[
+			{
+				id:0,
+				text:'报警性质'	
+			},
+			{
+				id:10,
+				text:'真实火警'
+			},
+			{
+				id:20,
+				text:'测试'
+			},
+			{
+				id:30,
+				text:'误报'
+			}
+		],
+		flag:{
+			zl:false,
+			xz:false
+		},
+		xztext:'报警性质',
 		listJson: {
 			pageNo: 0,
 			handleStatus: 100,
 			queryWord: '',
-			equipmentSysTime: ''
+			equipmentSysTime: '',
+			equipmentType:'报警信息种类',
+			policeResultType:0
 		},
 		otherJson: {
 			companyName:'',
@@ -24,6 +50,33 @@ Page({
 			deviceType:'',
 			pageNo:0
 		}
+	},
+	flagZl(){
+		this.setData({
+			'flag.zl':!this.data.flag.zl,
+			'flag.xz':false
+		})
+	},
+	flagXz(){
+		this.setData({
+			'flag.zl':false,
+			'flag.xz':!this.data.flag.xz
+		})
+	},
+	changeZl(e){
+		this.setData({
+			'listJson.equipmentType':e.currentTarget.dataset.item
+		})
+		this.flagZl()
+		this.init({})
+	},
+	changeXz(e){
+		this.setData({
+			'listJson.policeResultType':e.currentTarget.dataset.id,
+			'xztext':this.data.xzlist.filter(item=>item.id==e.currentTarget.dataset.id)[0].text
+		})
+		this.flagXz()
+		this.init({})
 	},
 	goDetails(e) {
 		let item = e.currentTarget.dataset.item
@@ -73,6 +126,19 @@ Page({
 		if (json.equipmentSysTime == 0) {
 			delete json.equipmentSysTime
 		}
+		if(json.equipmentType=='报警信息种类'){
+			delete json.equipmentType
+		}/* else if(json.equipmentType!='传输装置'){
+			json.equipmentType = '*'+json.equipmentType+'*'
+		} */
+		if(json.policeResultType==0){
+			delete json.policeResultType
+		}
+		
+		/* if(json.queryWord){
+			json.queryWord = '*'+json.queryWord+'*'
+		} */
+		
 		App.post({
 			url: "police/list",
 			method: "GET",
@@ -184,9 +250,9 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function() {
-		if (this.data.noLoading) {
+		/* if (this.data.noLoading) {
 			return
-		}
+		} */
 		if (App.cheakLogin(function() {
 				wx.switchTab({
 					url: "/pages/index/index"

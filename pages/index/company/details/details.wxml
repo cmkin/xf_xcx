@@ -16,7 +16,7 @@
 	
 	
 	<view class="jl">
-		当前位置距离您{{juli}}KM
+		当前位置距离您 {{juli.n}} {{ juli.ism?'M':'KM' }}
 	</view>
 	
 	<view class="details" wx:if="{{detailsFlag}}">

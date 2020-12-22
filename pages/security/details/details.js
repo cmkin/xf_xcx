@@ -8,7 +8,8 @@ Page({
 	data: {
 		alert: false,
 		alertr: false,
-		item:{}
+		item:{},
+		pageType:0
 	},
 	alertM() {
 		this.setData({
@@ -36,11 +37,13 @@ Page({
 					this.alertrM()
 				}
 				
-				let item = this.data.item
+				this.getDetails()
+				
+				/* let item = this.data.item
 					item.handleStatus = 1
 				this.setData({
 					item:item
-				})
+				}) */
 			}
 		})
 	},
@@ -57,14 +60,49 @@ Page({
 	noclose(e) {
 
 	},
+	
+	getDetails(){
+		App.post({
+			url:'police/queryById',
+			method:"GET",
+			data:{
+				id:this.data.item.id
+			},
+			success:(res)=>{
+				let item = res
+				for(let i in item){
+					if(!item[i]){
+						item[i] = '暂无'
+					}
+				}
+				this.setData({
+					item: item
+				})
+			}
+		})
+	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
+		console.log(options)
+		let item = JSON.parse(decodeURIComponent(options.item))
+		let pageType = options.pageType || 0
+			
+		for(let i in item){
+			if(!item[i]){
+				item[i] = '暂无'
+			}
+		}
 		this.setData({
-			item: JSON.parse(decodeURIComponent(options.item))
+			item: item,
+			pageType:pageType
 		})
+		if(pageType!=1){
+			this.getDetails()
+		}
+		
 	},
 
 	/**

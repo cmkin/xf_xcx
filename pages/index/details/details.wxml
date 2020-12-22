@@ -1,5 +1,5 @@
 <!--pages/index/details/details.wxml-->
-<view class="new_details">
+<view class="new_details" style="opacity: {{opacity}};">
 	
 	
 	
@@ -24,6 +24,7 @@
 		<view class="i" bindtap="iconAction" data-type="{{item.type}}" wx:for="{{iconsLists}}">
 			<image src="{{item.icon}}"></image>
 			<text>{{item.text}}</text>
+			<text>{{item.num}}</text>
 			<button type="share" open-type="share" wx:if="{{index==2}}">分享</button>
 		</view>
 	</view>

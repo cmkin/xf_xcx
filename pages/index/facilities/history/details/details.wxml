@@ -6,36 +6,41 @@
 		<view class="item">
 			<view>
 				<text>系统组件:</text>
-				<text>消防水池</text>
+				<text>{{item.systemName?item.systemName:'无'}}</text>
 			</view>
 			<view>
 				<text>核对时间:</text>
-				<text>2020-10-12  11:00:00</text>
+				<text>{{item.handleTime}}</text>
 			</view>
 			<view>
 				<text>核对人:</text>
-				<text>张晓</text>
+				<text>{{item.handleUserCode}}</text>
 			</view>
 			<view>
 				<text>职务:</text>
-				<text>中队长</text>
+				<text>{{item.post}}</text>
 			</view>
 			<view>
 				<text>单位:</text>
-				<text>河西消防支队</text>
+				<text>{{item.orgCodeTxt}}</text>
 			</view>
+			
+			<!-- <view wx:if="{{item.handleStatus==0}}">
+				<text>核对状态:</text>
+				<text>未处理</text>
+			</view> -->
 			<view>
 				<text>核对状态:</text>
-				<text>不符合</text>
+				<text>{{item.handleResult==0?'不符合':'符合'}}</text>
 			</view>
-			<view>
+			<view wx:if="{{item.handleResult==0}}">
 				<text>状态说明:</text>
-				<text>由于系统故障，没有数据，暂时无法准确判断由于系统故障，没有数据，暂时无法准确判断由于系统故障，没有数据，暂时无法准确判断由于系统故障，没有数据，暂时无法</text>
+				<text>{{item.handleRemark}}</text>
 			</view>
 		</view>
 		
 		<!-- 不相符 -->
-		<view class="item">
+		<!-- <view class="item">
 			<view>
 				<text>系统组件:</text>
 				<text>消防水池</text>
@@ -60,7 +65,7 @@
 				<text>核对状态:</text>
 				<text>相符</text>
 			</view>
-		</view>
+		</view> -->
 		
 	</view>
 

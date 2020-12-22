@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText":"我的处理"
+  "navigationBarTitleText":"我的处理",
+  "enablePullDownRefresh":true
 }

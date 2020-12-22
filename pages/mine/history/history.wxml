@@ -2,14 +2,26 @@
 <view class="history">
 	<view class="tabs_wrap">
 		<view class="tabs">
-			<view class="item active">点赞</view>
-			<view class="item">收藏</view>
-			<view class="item">转发 </view>
+			<view class="item {{ listJson.type==0?'active' :'' }}" data-type="{{0}}" bindtap="changeTab">点赞</view>
+			<view class="item {{ listJson.type==1?'active' :'' }}" data-type="{{1}}" bindtap="changeTab">收藏</view>
 		</view>
 	</view>
 	
 	
 	<view class="news_list">
+		<view class="i" bindtap="godetail" data-id="{{item.id}}" wx:for="{{lists}}">
+			<view class="left">
+				<text>{{item.title}}</text>
+				<view class="info">
+					<text>{{item.source}}</text>
+					<text>{{item.articleTime}}</text>
+				</view>
+			</view>
+			<image src="{{item.coverUrl}}" mode="aspectFill"></image>
+		</view>
+	</view>
+	
+	<!-- <view class="news_list">
 		<view class="i" bindtap="godetail" wx:for="{{5}}">
 			<view class="left">
 				<text>国家综合性消防救援队伍改革建设发展迈出坚实步伐</text>
@@ -20,7 +32,7 @@
 			</view>
 			<image src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2938534283,2247820591&fm=26&gp=0.jpg"></image>
 		</view>
-	</view>
+	</view> -->
 	
 	
 </view>

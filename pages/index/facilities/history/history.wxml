@@ -9,11 +9,11 @@
 			<text>核对人</text>
 			<text>核对状态</text>
 		</view>
-		<view class="item" bindtap="godetails" wx:for="{{20}}">
-			<text>消防水池</text>
-			<text>12月18日</text>
-			<text>张全</text>
-			<text>相符</text>
+		<view class="item" bindtap="godetails" data-item="{{item}}" wx:for="{{lists}}">
+			<text>{{item.systemName?item.systemName:'暂无'}}</text>
+			<text>{{item.handleTime}}</text>
+			<text>{{item.handleUserCode}}</text>
+			<text>{{item.handleResult==0?'不符合':'符合'}}</text>
 		</view>
 	</view>
 	

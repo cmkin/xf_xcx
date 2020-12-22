@@ -58,13 +58,8 @@ Page({
 				code:App.globalData.code
 			},
 			success: (res) => {
-				App.globalData.token = res.token
-				App.globalData.userInfo = res.sysUser
 				
-				wx.setStorage({
-				  key:"token",
-				  data:res.token
-				})
+				App.saveUser(res)
 				
 				if (App.globalData.userInfo && App.globalData.userInfo.phone) {
 					wx.switchTab({
@@ -91,13 +86,18 @@ Page({
 				code:App.globalData.code
 			},
 			success:(res)=>{
-				App.globalData.token = res.token
-				App.globalData.userInfo = res.sysUser
+			
+				
+				App.saveUser(res)
+				
+				wx.switchTab({
+					url: '/pages/index/index'
+				})
+				
+				return
 				
 				if (App.globalData.userInfo && App.globalData.userInfo.phone) {
-					wx.switchTab({
-						url: '/pages/index/index'
-					})
+					
 				} else {
 					wx.navigateTo({
 						url: './phoneBind/phoneBind'

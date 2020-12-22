@@ -13,23 +13,27 @@ Page({
 			icon:'/images/icon-like.png',
 			select:'/images/icon-like-select.png',
 			text:"点赞",
+			num:0,
 			type:1
 		},
 		{
 			icon:'/images/icon-collect.png',
 			select:'/images/icon-collect-select.png',
 			text:"收藏",
+			num:0,
 			type:2
 		},
 		{
 			icon:'/images/icon-forward.png',
 			select:'/images/icon-like-select.png',
 			text:"转发",
+			num:0,
 			type:3
 		}
 		
 	],
-	item:{}
+	item:{},
+	opacity:0
   },
 
   /**
@@ -43,7 +47,7 @@ Page({
 	  var that = this;
 	  App.post({
 	  	url:'article/queryById',
-	  	token:false,
+	  	token:App.globalData.token?true:false,
 	  	method:'GET',
 	  	data:{
 	  		id:id
@@ -57,17 +61,39 @@ Page({
 	  		this.setData({
 	  			item:item,
 	  			iconsLists:this.data.iconsLists.map(it=>{
-	  				if(item.izGive == 1 && it.type==1){
-	  					it.icon = '/images/icon-like-select.png'
+	  				if(  it.type==1){
+							it.num = item.giveCount
+						if(item.izGive == 1){
+							it.icon = '/images/icon-like-select.png'
+						}else{
+							it.icon = '/images/icon-like.png'
+						}
+	  					
 	  				}
-					if(item.izGive == 1 && it.type==2){
-						it.icon = '/images/icon-collect-select.png'
+					if(  it.type==2){
+						it.num = item.followCount
+						if(item.izfollow == 1){
+							it.icon = '/images/icon-collect-select.png'
+						}else{
+							it.icon = '/images/icon-collect.png'
+						}
+						
+					}
+					if(it.type==3){
+						it.num = item.zfCount
 					}
 	  				return it
 	  			})
 	  		})	
 	  		var article = item.content;	
 	  		WxParse.wxParse('article', 'html', item.content, that, 5);
+			
+			setTimeout(()=>{
+				this.setData({
+					opacity:1
+				})
+			},300)
+			
 	  	}
 	  })
 	  
@@ -103,6 +129,18 @@ Page({
 			})
 		  break;
 		  case 3:
+			App.post({
+				url:'articleUser/confirm',
+				
+				loginTs:false,
+				data:{
+					type:3,
+					articleId:this.data.item.id
+				},
+				success:(res)=>{
+					this.getItem(this.data.item.id)
+				}
+			})
 		  break;
 	  }
 	  

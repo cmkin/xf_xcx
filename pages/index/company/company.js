@@ -22,10 +22,15 @@ Page({
 	this.init({})
   },
   init(ops){
+	  let json = {...this.data.listJson}
+	   if(json.departName){
+	  	json.departName = '*'+json.departName+'*'
+	  } 
+	  
 	  App.post({
 		  url:'company/list',
 		  data:{
-			  ...this.data.listJson
+			  ...json
 		  },
 		 // token:false,
 		  method:"GET",
@@ -56,6 +61,7 @@ Page({
 		  }
 	  })
   },
+ 
   listJsonChange(e){
 	  this.setData({
 		  'listJson.departName':e.detail.value,

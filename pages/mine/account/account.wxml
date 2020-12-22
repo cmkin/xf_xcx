@@ -2,16 +2,20 @@
 <view class="account">
 	<view class="title">点击头像切换帐号</view>
 	<view class="items clearfix">
-		<view class="item">
-			<image></image>
-			<text>快乐的小鸟</text>
+		<view class="item" bindtap="changeZh" data-item="{{item}}" wx:for="{{userList}}">
+			<image src="{{item.sysUser.avatar}}"></image>
+			<text>{{item.sysUser.realname}}</text>
+			<view class="now" wx:if="{{item.sysUser.id == infos.id}}">
+				<text>当前使用</text>
+			</view>
 		</view>
-		<view class="item active">
+		
+		<!-- <view class="item active">
 			<image></image>
 			<text>开心消消乐</text>
 			<view class="now">
 				<text>当前使用</text>
 			</view>
-		</view>
+		</view> -->
 	</view>
 </view>

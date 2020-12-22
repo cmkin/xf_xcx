@@ -45,6 +45,7 @@
 .g_alart .main .btn {
   text-align: center;
   padding: 30rpx 0;
+  position: relative;
 }
 .g_alart .main .btn text {
   display: inline-block;
@@ -57,8 +58,13 @@
   border-radius: 40px;
   color: #fff;
 }
-.security {
-  padding: 30rpx;
+.g_alart .main .btn button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 .security .tops {
   position: fixed;
@@ -86,12 +92,16 @@
   top: 80rpx;
   left: 0;
   z-index: 100;
-  background: #fff;
   width: 100%;
-  padding: 30rpx;
+  border-top: 1px solid #E7EBF0;
   padding-bottom: 3px;
   padding-top: 0;
   box-sizing: border-box;
+}
+.security .search_wrap {
+  padding: 30rpx;
+  background: #fff;
+  padding-bottom: 0;
 }
 .security .search {
   padding: 5px;
@@ -100,7 +110,7 @@
   position: relative;
   padding-left: 90rpx;
   box-sizing: border-box;
-  width: 100%;
+  max-width: 100%;
 }
 .security .search image {
   width: 50rpx;
@@ -116,7 +126,9 @@
 .security .tabs {
   display: flex;
   padding: 20rpx 0;
+  margin-top: 290rpx;
   color: #5D5D60;
+  background-color: #fff;
 }
 .security .tabs .item {
   flex: 1;
@@ -156,8 +168,63 @@
 .security .tabs .active::after {
   opacity: 1;
 }
+.security .tabs .item {
+  flex: none;
+  width: 140rpx;
+  text-align: center;
+}
+.security .tiaojian {
+  position: relative;
+  z-index: 10000;
+}
+.security .tiaojian .titles {
+  border-bottom: 1px solid #E7EBF0;
+  background: #fff;
+  padding: 20rpx 30rpx;
+}
+.security .tiaojian .titles .i {
+  background-color: #F7F8FA;
+  display: inline-block;
+  margin-right: 20rpx;
+  padding: 4rpx 20rpx;
+  border-radius: 20px;
+}
+.security .tiaojian .titles .i text {
+  font-size: 28rpx;
+}
+.security .tiaojian .titles .i image {
+  display: inline-block;
+  width: 24rpx;
+  height: 24rpx;
+  position: relative;
+  top: 2px;
+}
+.security .tiaojian .list_wrap {
+  padding: 20rpx;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+}
+.security .tiaojian .list_wrap .bg {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 60vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.security .tiaojian .list_wrap text {
+  display: block;
+  padding: 20rpx;
+}
+.security .tiaojian .list_wrap .active {
+  color: #3878FE;
+}
 .security .items {
-  padding-top: 240rpx;
+  padding: 30rpx;
 }
 .security .items .item {
   box-shadow: 0px 3px 6px #DBE2EA;

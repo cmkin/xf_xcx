@@ -1,16 +1,19 @@
 <!--pages/mine/mine.wxml-->
 <view class="mine">
 	<view class="tx">
-		<image src=""></image>
-		<text>张权</text>
-		<view class="edit" bindtap="goInfo">
+		<image src="{{infos.avatar}}"></image>
+		<text  wx:if="{{infos}}">{{infos.realname}}</text>
+		<view class="edit" bindtap="goInfo"  wx:if="{{infos}}">
 			<text>编辑</text>
 			<image src="/images/edit.png"></image>
+		</view>
+		<view class="edit" wx:if="{{!infos}}" bindtap="gologin">
+			<text>去登录</text>
 		</view>
 	</view>
 	
 	<view class="items">
-		<view bindtap="goLink" data-item="{{item}}" class="item {{item.top?'top':''}}" wx:for="{{itemList}}">
+		<view bindtap="goLink" wx:if="{{item.iShow || infos}}" data-item="{{item}}" class="item {{item.top?'top':''}}" wx:for="{{itemList}}">
 			<text>{{item.text}}</text>
 			<image src="/images/jiantou.png"></image>
 		</view>

@@ -1,20 +1,48 @@
 // pages/mine/account/account.js
+const App = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+	userList:[],
+	infos:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	  console.log(this.data.userList,App.globalData.userList)
+	let infos = JSON.parse(decodeURIComponent(options.infos))
+		this.setData({
+			infos:infos,
+			userList:App.globalData.userList
+		})
   },
-
+  changeZh(e){
+	  
+	  let item = e.currentTarget.dataset.item
+		 if(item.sysUser.id == this.data.infos.id){
+			 return
+		 }
+		 wx.setStorage({
+			 key:"token",
+			 data:item.token
+		 })
+		 App.globalData.token = item.token
+		 wx.showLoading({
+			 title:"切换中..."
+		 })
+		 setTimeout(()=>{
+			 wx.hideLoading()
+			 wx.switchTab({
+				 url:"/pages/index/index"
+			 })
+		 },3000)
+	  console.log(item)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

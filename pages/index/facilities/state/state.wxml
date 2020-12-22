@@ -18,24 +18,24 @@
 	<view class="items">
 		<view class="item">
 			<view>
-				<text>公司全称:</text>
-				<text>武清居然之家</text>
+				<text>单位名称:</text>
+				<text>{{item.departName}}</text>
 			</view>
 			<view>
-				<text>地址:</text>
-				<text>武清区前进道</text>
+				<text>单位详址:</text>
+				<text>{{item.address}}</text>
 			</view>
 			<view>
-				<text>防火等级:</text>
-				<text>中</text>
+				<text>监管等级:</text>
+				<text>{{item.jgdj}}</text>
 			</view>
 			<view>
-				<text>安全负责人:</text>
-				<text>胡一天</text>
+				<text>消防安全负责人姓名:</text>
+				<text>{{item.aqzrr}}</text>
 			</view>
 			<view>
 				<text>联系电话:</text>
-				<text>12345678951</text>
+				<text>{{item.tel}}</text>
 			</view>
 		</view>
 	</view>

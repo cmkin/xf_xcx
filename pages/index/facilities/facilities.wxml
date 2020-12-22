@@ -7,8 +7,8 @@
 		</view>
 	</view>
 	<view class="items">
-		<view class="item" bindtap="goDetail" wx:for="{{15}}">
-			<text>武清居然之家</text>
+		<view class="item" data-item="{{item}}" bindtap="goDetail" wx:for="{{lists}}">
+			<text>{{item.departName}}</text>
 			<image src="/images/jiantou.png"></image>
 		</view>
 	</view>

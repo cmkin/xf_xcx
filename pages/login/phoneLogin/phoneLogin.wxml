@@ -17,9 +17,9 @@
 		<button class="btn" type="primary" formType="submit">确定</button>
 	</form>
 	
-	<view class="wx" bindtap="wxLogin">
+	<!-- <view class="wx" bindtap="wxLogin">
 		<image src="/images/icon-wechat.png"></image>
 		<text>微信直接登录</text>
-	</view>
+	</view> -->
 	
 </view>

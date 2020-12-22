@@ -3,11 +3,18 @@
 	<view class="fix">
 		<view class="search">
 			<image src="/images/search.png"></image>
-			<input type="text" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请搜索单位、设备类型" />
+			<input type="text"  confirm-type="search" bindconfirm="listJsonChange" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请搜索单位、设备类型" />
 		</view>
 		<view class="r">
-			时间查找
-			<image src="/images/jt_l.png"></image>
+			
+			<picker mode="date" data-typej ="{{1}}" value="{{listJson.equipmentSysTime}}" start="1998-01-01" bindcancel="listJsontimeChange"  bindchange="listJsontimeChange">
+			  <view class="" style="color: #3878FE;">
+			   {{ otherJson.equipmentSysTime ? otherJson.equipmentSysTime : '时间查找' }} 
+			   <image src="/images/jt_l.png"></image>
+			  </view>
+			</picker>
+			
+			
 		</view>
 	</view>
 	
@@ -17,10 +24,10 @@
 			<text>日期</text>
 			<text>设备类型</text>
 		</view>
-		<view class="item" bindtap="godetails" wx:for="{{20}}">
-			<text>天津黑牛城道 <br/> 居然之家</text>
-			<text>2020.12.04</text>
-			<text>智能烟感</text>
+		<view class="item" bindtap="godetails" data-item="{{item}}" wx:for="{{otherLists}}">
+			<text>{{item.companyName}}</text>
+			<view style="flex: 1;"> <text style="display: block;"> {{item.equipmentSysTime[0]}} </text>  <text style="display: block;"> {{item.equipmentSysTime[1]}} </text>  </view>
+			<text>{{item.deviceName}}</text>
 		</view>
 	</view>
 </view>
