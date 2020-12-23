@@ -7,6 +7,7 @@ Page({
    */
   data: {
 	item:{},
+	updateTime:'',
 	tabList:[
 		
 	],
@@ -35,6 +36,27 @@ Page({
    */
   onLoad: function (options) {
 	// options = {item: '{"title":"自喷系统","id":0,"title2":"湿式自喷","type":2}'}
+
+	function dateFormat(fmt, date) {
+    let ret;
+    const opt = {
+        "Y+": date.getFullYear().toString(),        // 年
+        "m+": (date.getMonth() + 1).toString(),     // 月
+        "d+": date.getDate().toString(),            // 日
+        "H+": date.getHours().toString(),           // 时
+        "M+": date.getMinutes().toString(),         // 分
+        "S+": date.getSeconds().toString()          // 秒
+        // 有其他格式化字符需求可以继续添加，必须转化成字符串
+    };
+    for (let k in opt) {
+        ret = new RegExp("(" + k + ")").exec(fmt);
+        if (ret) {
+            fmt = fmt.replace(ret[1], (ret[1].length == 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, "0")))
+        };
+    };
+    return fmt;
+}
+
 	 let item = JSON.parse(options.item)
 		console.log(item)
 		if(item.type==1){
@@ -53,7 +75,8 @@ Page({
 				id:item.id,
 				id2:item.id2,
 				title:item.title,
-				title2:item.title2
+				title2:item.title2,
+				updateTime:dateFormat('YYYY-mm-dd HH:MM:SS',new Date())
 			})
 		}
 		this.setData({

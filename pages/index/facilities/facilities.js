@@ -30,7 +30,8 @@ Page({
   	  App.post({
   		  url:'company/list',
   		  data:{
-  			  ...json
+					...json,
+					pageSize:20
   		  },
   		 // token:false,
   		  method:"GET",

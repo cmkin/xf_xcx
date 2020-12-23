@@ -60,6 +60,11 @@
 				<text>处理人:</text>
 				<text>{{item.handleUserCode}}</text>
 			</view>
+			<view class="li" wx:if="{{ pageType!=1}}">
+				<text>警情描述:</text>
+				<text>{{item.remark}}</text>
+			</view>
+
 			
 			
 			<view class="btn"  bindtap="alertM" wx:if="{{item.handleStatus==0 && pageType!=1}}">

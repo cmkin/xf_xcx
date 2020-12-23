@@ -120,6 +120,15 @@
 .security_details .items .item .li {
   margin-top: 20rpx;
   color: #5D5D60;
+  position: relative;
+  overflow: hidden;
+  padding-left: 200rpx;
+}
+.security_details .items .item .li text:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 200rpx;
 }
 .security_details .items .item .li text:last-child {
   float: right;

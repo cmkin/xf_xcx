@@ -51,7 +51,7 @@
 
 	<view class="times">
 		<text>更新时间</text>
-		<text>{{item.item.updateTime}}</text>
+		<text>{{updateTime}}</text>
 	</view>
 
 	<view class="sys_com">
