@@ -37,7 +37,7 @@ Page({
 		},
 		xztext:'报警性质',
 		listJson: {
-			pageNo: 0,
+			pageNo: 1,
 			handleStatus: 100,
 			queryWord: '',
 			equipmentSysTime: '',
@@ -48,7 +48,7 @@ Page({
 			companyName:'',
 			equipmentSysTime:'',
 			deviceType:'',
-			pageNo:0
+			pageNo:1
 		}
 	},
 	flagZl(){
@@ -89,7 +89,7 @@ Page({
 		let typej = Number(e.currentTarget.dataset.typej)
 		let listJson = { ...this.data.listJson
 		}
-		listJson.pageNo = 0
+		listJson.pageNo = 1
 		switch (typej) {
 			case 0:
 				if (e.target.dataset.type == 200) {
@@ -207,7 +207,7 @@ Page({
 	
 	formOther(e){
 			this.setData({
-				'otherJson.pageNo':0
+				'otherJson.pageNo':1
 			})
 		switch(e.detail.type){
 			case 1:
@@ -289,7 +289,7 @@ Page({
 			this.setData({
 				'listJson': {
 					...this.data.listJson,
-					pageNo: 0
+					pageNo: 1
 				}
 			})
 			this.init({})
@@ -298,7 +298,7 @@ Page({
 			this.setData({
 				'otherJson': {
 					...this.data.otherJson,
-					pageNo: 0
+					pageNo: 1
 				}
 			})
 			this.otherInit({})

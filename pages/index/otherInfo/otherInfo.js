@@ -9,7 +9,7 @@ Page({
 		otherJson: {
 			equipmentSysTime: '',
 			queryWord: '',
-			pageNo: 0
+			pageNo: 1
 		},
 		otherLists: [],
 		noLoading: false
@@ -74,7 +74,7 @@ Page({
 			otherJson: {
 				...this.data.otherJson,
 				queryWord:e.detail.value,
-				pageNo: 0
+				pageNo: 1
 			}
 		})
 		this.otherInit({})
@@ -84,7 +84,7 @@ Page({
 			otherJson: {
 				...this.data.otherJson,
 				equipmentSysTime: e.detail.value,
-				pageNo: 0
+				pageNo: 1
 			}
 		})
 		this.otherInit({})
@@ -139,7 +139,7 @@ Page({
 		this.setData({
 			'otherJson': {
 				...this.data.otherJson,
-				pageNo: 0
+				pageNo: 1
 			}
 		})
 		this.otherInit({})

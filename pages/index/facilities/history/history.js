@@ -8,7 +8,7 @@ Page({
   data: {
 	lists:[],
 	listJson:{
-		pageNo:0
+		pageNo:1
 	},
 	allnums:0
   },
@@ -100,7 +100,7 @@ Page({
   		this.setData({
   			'listJson': {
   				...this.data.listJson,
-  				pageNo: 0
+  				pageNo: 1
   			}
   		})
   		this.init({})

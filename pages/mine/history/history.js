@@ -7,7 +7,7 @@ Page({
    */
   data: {
 	listJson:{
-		pageNo:0,
+		pageNo:1,
 		type:0
 	},
 	lists:[],
@@ -31,7 +31,7 @@ Page({
   	  console.log(e)
   	  this.setData({
   		  listJson:{
-  		  	pageNo:0,
+  		  	pageNo:1,
   		  	type:e.currentTarget.dataset.type
   		  },
   	  })
@@ -111,7 +111,7 @@ Page({
   		this.setData({
   			'listJson': {
   				...this.data.listJson,
-  				pageNo: 0
+  				pageNo: 1
   			}
   		})
   		this.init({})
