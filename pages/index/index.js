@@ -30,12 +30,12 @@ Page({
 		{
 			icon:'/images/icon-5.png',
 			text:"设备管理",
-			link:''
+			link:'./equipment/equipment'
 		},
 		{
 			icon:'/images/icon-6.png',
 			text:"视频监控",
-			link:''
+			link:'./video/video'
 		}
 		
 	],

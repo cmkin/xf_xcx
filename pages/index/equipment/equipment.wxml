@@ -1,0 +1,35 @@
+<!--pages/index/equipment/equipment.wxml-->
+<view class="equipment">
+	<view class="search_wrap">
+		<view class="search">
+			<image src="/images/search.png"></image>
+			<input data-typej="{{2}}" confirm-type="search" bindconfirm="listJsonChange" type="text" placeholder-style="color:#9D9CA2;font-size:28rpx;" placeholder="请搜索设备" />
+		</view>
+	</view>
+	<view class="lists">
+		<view class="li" bindtap="godetail" wx:for="{{3}}">
+			<view>
+				<text>设备名称:</text>
+				<text>xx设备</text>
+			</view>
+			<view>
+				<text>设备型号:</text>
+				<text>xx设备</text>
+			</view>
+			<view>
+				<text>投用日期:</text>
+				<text>xx设备</text>
+			</view>
+			<view>
+				<text>使用年限:</text>
+				<text>xx设备</text>
+			</view>
+			<view>
+				<text>安装人:</text>
+				<text>xx设备</text>
+			</view>
+			 
+		</view>
+	</view>
+	
+</view>

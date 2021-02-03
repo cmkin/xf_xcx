@@ -1,0 +1,26 @@
+<!--pages/index/video/list/list.wxml-->
+<view class="list">
+	<view class="tabs">
+		<view class="main clearfix">
+			<text class="omg {{item==0?'active':''}}" wx:for="{{5}}">居然之家</text>
+		</view>
+	</view>
+	
+	<view class="lists">
+		<view class="title clearfix">
+			<text>视频</text>
+			<view class="right">
+				<image src="../../../../images/bf.png"></image>
+				<text>2个摄像机</text>
+			</view>
+		</view>
+		<view class="li" wx:for="{{3}}">
+			<view class="ts">
+				<text>一区c1门</text>
+			</view>
+			<view class="hm">
+				<image src="../../../../images/banner.png"></image>
+			</view>
+		</view>
+	</view>
+</view>

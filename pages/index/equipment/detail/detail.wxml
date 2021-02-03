@@ -1,0 +1,36 @@
+<!--pages/index/equipment/detail/detail.wxml-->
+<view class="detail">
+	<view class="yuan"></view>
+	<view class="main">
+		<image bindtap="preview" src="../../../../images/banner.png"></image>
+		<view class="lists">
+			<view class="li">
+				<view>
+					<text>设备名称:</text>
+					<text>xx设备</text>
+				</view>
+				<view>
+					<text>设备型号:</text>
+					<text>xx设备</text>
+				</view>
+				<view>
+					<text>投用日期:</text>
+					<text>xx设备</text>
+				</view>
+				<view>
+					<text>使用年限:</text>
+					<text>xx设备</text>
+				</view>
+				<view>
+					<text>安装人:</text>
+					<text>xx设备</text>
+				</view>
+				<view>
+					<text>生产商:</text>
+					<text>xx设备</text>
+				</view>
+				 
+			</view>
+		</view>
+	</view>
+</view>

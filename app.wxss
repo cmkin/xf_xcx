@@ -24,4 +24,11 @@ text,view{
 	zoom: 1;
 }
 
+.omg{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+
 @import "/pages/wxParse/wxParse.wxss";
