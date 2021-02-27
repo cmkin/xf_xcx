@@ -1,0 +1,129 @@
+<!--pages/index/inspection/inspection.wxml-->
+<view class="inspection">
+	<view class="view" style="display: none;">
+		<view class="li">
+			<text>时间</text>
+			<view class="r">
+				2020-02-02 10:00:00
+			</view>
+		</view>
+		<view class="li">
+			<text>巡查人</text>
+			<view class="r">
+				张天
+			</view>
+		</view>
+		<view class="li">
+			<text>巡查人单位</text>
+			<view class="r">
+				国泰卓萨达
+			</view>
+		</view>
+		<view class="white">
+			<view class="li">
+				<text>巡检单位</text>
+				<view class="r">
+					<text>天津师大</text>
+					<image src="../../../images/jiantou.png"></image>
+				</view>
+			</view>
+			<view class="li">
+				<text>设备</text>
+				<view class="r">
+					<text>请选择</text>
+					<image src="../../../images/jiantou.png"></image>
+				</view>
+			</view>
+			<view class="li">
+				<text>巡检位置</text>
+				<view class="r">
+					<input type="text" placeholder="请输入现场具体位置" />
+				</view>
+			</view>
+			<view class="li" style="overflow: hidden;">
+				<text>现场照片</text>
+				<view class="r zhaop">
+					<image src="" wx:for="{{7}}"></image>
+					<image class="bno" src="../../../images/add.png"></image>
+				</view>
+			</view>
+			<view class="li" style="overflow: hidden;">
+				<text>描述</text>
+				<view class="r">
+					<!-- textarea name="" id="" cols="30" ></textarea> -->
+					<textarea name="" id="" cols="20" rows="6"></textarea>
+					
+				</view>
+			</view>
+		</view>
+		
+	</view>
+	
+	
+	
+	
+	<view class="view">
+		<view class="li">
+			<text>巡查单位</text>
+			<view class="r">
+				张天
+			</view>
+		</view>
+		<view class="li">
+			<text>时间</text>
+			<view class="r">
+				2020-02-02 10:00:00
+			</view>
+		</view>
+		<view class="li">
+			<text>巡查人</text>
+			<view class="r">
+				国泰卓萨达
+			</view>
+		</view>
+		<view class="white">
+			
+			<view class="li">
+				<text>设备</text>
+				<view class="r">
+					<text>请选择</text>
+					<image src="../../../images/jiantou.png"></image>
+				</view>
+			</view>
+			<view class="li">
+				<text>巡检位置</text>
+				<view class="r">
+					<input type="text" placeholder="请输入现场具体位置" />
+				</view>
+			</view>
+			<view class="li" style="overflow: hidden;">
+				<text>现场照片</text>
+				<view class="r zhaop">
+					<image src="" wx:for="{{7}}"></image>
+					<image class="bno" src="../../../images/add.png"></image>
+				</view>
+			</view>
+			<view class="li" style="overflow: hidden;">
+				<text>描述</text>
+				<view class="r">
+					<!-- textarea name="" id="" cols="30" ></textarea> -->
+					<textarea name="" id="" cols="20" rows="6"></textarea>
+					
+				</view>
+			</view>
+		</view>
+		
+	</view>
+	
+	
+	
+	<view class="btns">
+		提交
+	</view>
+	
+	
+	
+	
+	
+	
+</view>

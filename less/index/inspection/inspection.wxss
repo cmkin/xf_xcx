@@ -1,0 +1,55 @@
+.inspection .view .li {
+  border-bottom: 1px solid #E7EBF0;
+  width: 90%;
+  margin: auto;
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  color: #333;
+}
+.inspection .view .li .r {
+  float: right;
+  color: #83838B;
+}
+.inspection .view .li .r image {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  top: 3px;
+}
+.inspection .view .li .r input {
+  text-align: right;
+}
+.inspection .view .li .r textarea {
+  display: block;
+  width: 75vw;
+}
+.inspection .view .li .zhaop {
+  width: 80%;
+}
+.inspection .view .li .zhaop image {
+  float: left;
+  width: 24%;
+  margin-left: 1%;
+  background-color: #ccc;
+  height: 120rpx;
+  margin-bottom: 16rpx;
+}
+.inspection .view .li .zhaop .bno {
+  background: none;
+}
+.inspection .view .white {
+  background-color: #fff;
+}
+.inspection .btns {
+  text-align: center;
+  padding: 30rpx;
+  background-color: #3878FE;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 40px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 80rpx;
+}

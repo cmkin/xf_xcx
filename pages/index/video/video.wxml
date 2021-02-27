@@ -1,9 +1,9 @@
 <!--pages/index/video/video.wxml-->
 <view class="video">
 	<view class="ul clearfix">
-		<view bindtap="changeItem" data-item="{{item}}" class="li  {{ activeItem==item ? 'active': ''}}" wx:for="{{10}}">
+		<view bindtap="changeItem" data-item="{{item}}" class="li  {{ activeItem==item ? 'active': ''}}" wx:for="{{lists}}">
 			<image src="{{ activeItem!=item?'../../../images/shiping2.png':'../../../images/shiping.png' }}"></image>
-			<text class="omg">单位名称</text>
+			<text style="min-height: 38rpx;" class="omg">{{item.companyid_dictText}}</text>
 			<text>设置</text>
 		</view>
 	</view>

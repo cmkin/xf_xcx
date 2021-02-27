@@ -1,9 +1,10 @@
 {
   "pages": [
 	  "pages/index/index",
-	  "pages/index/equipment/detail/detail",
-    "pages/index/equipment/equipment",
+	  "pages/index/inspection/inspection",
     
+    "pages/index/equipment/detail/detail",
+    "pages/index/equipment/equipment",
     "pages/index/video/list/list",
     "pages/index/video/video",
     "pages/security/security",
@@ -30,7 +31,6 @@
     "pages/mine/info/info",
     "pages/security/alarms/details/details",
     "pages/security/details/details"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText":"视频监控"
+  "navigationBarTitleText":"视频监控",
+  "enablePullDownRefresh":true
 }
