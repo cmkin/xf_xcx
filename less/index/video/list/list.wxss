@@ -8,7 +8,7 @@
   z-index: 1000;
 }
 .list .tabs .main {
-  width: 900rpx;
+  width: 1800rpx;
 }
 .list .tabs .main text {
   float: left;
@@ -70,9 +70,9 @@
 .list .lists .li .hm {
   padding-top: 20rpx;
 }
-.list .lists .li .hm image {
+.list .lists .li .hm web-view {
   width: 100%;
   background-color: #fff;
-  height: 25vh;
+  height: 30vh;
   border-radius: 10rpx;
 }

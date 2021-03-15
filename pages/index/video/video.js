@@ -23,8 +23,9 @@ Page({
 	this.init({})
   },
   changeItem(e){
+	 let item = e.currentTarget.dataset.item
 	wx.navigateTo({
-		url:"./list/list"
+		url:"./list/list?id="+10
 	})  
   },
   init(ops){

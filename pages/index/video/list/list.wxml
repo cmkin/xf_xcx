@@ -2,7 +2,7 @@
 <view class="list">
 	<view class="tabs">
 		<view class="main clearfix">
-			<text class="omg {{item==0?'active':''}}" wx:for="{{5}}">居然之家</text>
+			<text bindtap="changeTab" data-sjzgdwtypeid="{{item.orgCode}}" class="omg {{item.orgCode==sjzgdwtypeid?'active':''}}" wx:for="{{tabs}}">{{item.departName}}</text>
 		</view>
 	</view>
 	
@@ -11,16 +11,20 @@
 			<text>视频</text>
 			<view class="right">
 				<image src="../../../../images/bf.png"></image>
-				<text>2个摄像机</text>
+				<text>{{sjzgdwtypeList.length}}个摄像机</text>
 			</view>
 		</view>
-		<view class="li" wx:for="{{3}}">
+		<view class="li" wx:if="{{sjzgdwtypeList.length}}" wx:for="{{sjzgdwtypeList}}">
 			<view class="ts">
-				<text>一区c1门</text>
+				<text>{{item.name}}</text>
 			</view>
 			<view class="hm">
-				<image src="../../../../images/banner.png"></image>
+				<web-view src='http://console.tjlinux.cn:9088/jeecg-boot/device.html?https://open.ys7.com/ezopen/h5/iframe_se?url={{item.playurl}}&autoplay=1&accessToken={{item.accessToken}}'></web-view>
+				<!-- <web-view src='https://open.ys7.com/ezopen/h5/iframe_se?url={{item.playurl}}&autoplay=1&accessToken={{item.accessToken}}' frameborder="0"></web-view> -->
+				<!-- <video autoplay="autoplay" src=></video> -->
+				<!-- <image src="../../../../images/banner.png"></image> -->
 			</view>
 		</view>
+		<view style="padding: 30rpx;text-align: center;" wx:if="{{!sjzgdwtypeList.length}}">暂无数据</view>
 	</view>
 </view>

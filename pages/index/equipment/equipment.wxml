@@ -7,26 +7,26 @@
 		</view>
 	</view>
 	<view class="lists">
-		<view class="li" bindtap="godetail" wx:for="{{3}}">
+		<view class="li" bindtap="changeItem" data-item="{{item}}" wx:for="{{lists}}">
 			<view>
 				<text>设备名称:</text>
-				<text>xx设备</text>
+				<text>{{item.cszzlxname}}</text>
 			</view>
 			<view>
 				<text>设备型号:</text>
-				<text>xx设备</text>
+				<text>{{item.cszzxh}}</text>
 			</view>
 			<view>
 				<text>投用日期:</text>
-				<text>xx设备</text>
+				<text>{{item.trsyrq || '暂无'}}</text>
 			</view>
 			<view>
 				<text>使用年限:</text>
-				<text>xx设备</text>
+				<text>{{item.serviceLife || '暂无'}}</text>
 			</view>
 			<view>
 				<text>安装人:</text>
-				<text>xx设备</text>
+				<text>{{item.installers || '暂无'}}</text>
 			</view>
 			 
 		</view>

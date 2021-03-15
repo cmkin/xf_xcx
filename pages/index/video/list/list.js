@@ -1,18 +1,37 @@
 // pages/index/video/list/list.js
+const App = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+	tabs:[],
+	sjzgdwtypeid:'',
+	sjzgdwtypeList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+		App.post({
+			url:'http://console.tjlinux.cn:9088/jeecg-boot/networking/xfCompany/list',
+			method:"GET",
+			data:{
+				pageNo: 1,
+				pageSize: 10
+			},
+			success:(res)=>{
+				
+				console.log(res)
+				this.setData({
+					tabs:res.records,
+					sjzgdwtypeid:res.records[0].orgCode
+				})
+				this.getVidoes()
+			}
+		})
   },
 
   /**
@@ -20,6 +39,39 @@ Page({
    */
   onReady: function () {
 
+  },
+  changeTab(e){
+	  let sjzgdwtypeid = e.currentTarget.dataset.sjzgdwtypeid
+		this.setData({
+			sjzgdwtypeid:sjzgdwtypeid
+		})
+		this.getVidoes()
+  },
+  getVidoes(){
+	  App.post({
+	  	url:'http://console.tjlinux.cn:9088/jeecg-boot/xfdevice/xfDevice/queryByCompanyCode',
+	  	method:"GET",
+	  	data:{
+	  		companyid: this.data.sjzgdwtypeid,
+	  	},
+	  	success:(res)=>{
+	  		console.log(res)
+			this.setData({
+				sjzgdwtypeList:[res]
+			})
+	  		
+	  	},
+		error:(res)=>{
+			wx.showToast({
+				title: res.message,
+				icon: 'none',
+				duration: 3000
+			})
+			this.setData({
+				sjzgdwtypeList:[]
+			})
+		}
+	  })
   },
 
   /**

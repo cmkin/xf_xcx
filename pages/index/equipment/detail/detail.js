@@ -7,14 +7,24 @@ Page({
   data: {
 	imgList:[
 		"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=508387608,2848974022&fm=26&gp=0.jpg"
-	]	
+	],
+	item:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+		let item = JSON.parse(decodeURIComponent(options.item))
+		
+		for(let i in item){
+			if(!item[i]){
+				item[i] = '暂无'
+			}
+		}
+		this.setData({
+			item: item
+		})
   },
   preview(event) {
       console.log(event.currentTarget.dataset.src)

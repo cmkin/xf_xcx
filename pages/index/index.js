@@ -25,7 +25,7 @@ Page({
 		{
 			icon:'/images/icon-4.png',
 			text:"物联巡查",
-			link:''
+			link:'./inspection/inspection'
 		},
 		{
 			icon:'/images/icon-5.png',

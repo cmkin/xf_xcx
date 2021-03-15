@@ -1,57 +1,72 @@
 <!--pages/index/inspection/inspection.wxml-->
 <view class="inspection">
-	<view class="view" style="display: none;">
+	<view class="view" >
 		<view class="li">
 			<text>时间</text>
 			<view class="r">
-				2020-02-02 10:00:00
+				{{times}}
 			</view>
 		</view>
 		<view class="li">
 			<text>巡查人</text>
 			<view class="r">
-				张天
+				{{uinfos.realname}}
 			</view>
 		</view>
 		<view class="li">
 			<text>巡查人单位</text>
 			<view class="r">
-				国泰卓萨达
+				{{uinfos.orgCodeTxt}}
 			</view>
 		</view>
 		<view class="white">
 			<view class="li">
 				<text>巡检单位</text>
 				<view class="r">
-					<text>天津师大</text>
+					 <picker mode = "selector" style="display: inline-block;" bindchange="bindPickerChange" range-key="departName" value="{{index}}" range="{{dwlb}}">
+					    <view class="picker">
+					     <!-- -->
+						<text>{{dwlb[dwindex].departName}} </text>
+					    </view>
+					  </picker>
+					
 					<image src="../../../images/jiantou.png"></image>
 				</view>
 			</view>
 			<view class="li">
 				<text>设备</text>
 				<view class="r">
-					<text>请选择</text>
+					<picker mode = "selector" style="display: inline-block;" bindchange="bindPickerChange2" range-key="cszzlxname" value="{{index}}" range="{{sblb}}">
+					   <view class="picker">
+					    <!-- -->
+											<text>{{sblb[sbindex].cszzlxname}} </text>
+					   </view>
+					 </picker>
 					<image src="../../../images/jiantou.png"></image>
 				</view>
 			</view>
 			<view class="li">
 				<text>巡检位置</text>
 				<view class="r">
-					<input type="text" placeholder="请输入现场具体位置" />
+					<input bindinput="inputC" data-type="1"  type="text" placeholder="请输入现场具体位置" />
 				</view>
 			</view>
 			<view class="li" style="overflow: hidden;">
 				<text>现场照片</text>
-				<view class="r zhaop">
-					<image src="" wx:for="{{7}}"></image>
-					<image class="bno" src="../../../images/add.png"></image>
+				<view class="r zhaop clearfix">
+					<view class="aa" wx:for="{{imgs}}">
+						<image bindtap="delImg" data-index="{{index}}" src="../../../images/del.png" class="del"></image>
+						<image class="st" src="{{item}}" ></image>
+					</view>
+					
+					<image wx:if="{{imgs.length<9}}"  bindtap="changeImg" class="bno" src="../../../images/add.png"></image>
 				</view>
 			</view>
 			<view class="li" style="overflow: hidden;">
 				<text>描述</text>
 				<view class="r">
 					<!-- textarea name="" id="" cols="30" ></textarea> -->
-					<textarea name="" id="" cols="20" rows="6"></textarea>
+					<textarea bindinput="inputC" name="" id="" cols="20" rows="6"></textarea>
 					
 				</view>
 			</view>
@@ -62,7 +77,7 @@
 	
 	
 	
-	<view class="view">
+	<view class="view" style="display: none;">
 		<view class="li">
 			<text>巡查单位</text>
 			<view class="r">
@@ -117,7 +132,7 @@
 	
 	
 	
-	<view class="btns">
+	<view class="btns" bindtap="submit">
 		提交
 	</view>
 	
